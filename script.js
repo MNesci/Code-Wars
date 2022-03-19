@@ -1,4 +1,5 @@
 
+
 function areYouPlayingBanjo(name) {
     // assign a variable to the first letter of name input, but always in lower case
     let firstLetterOfName = name[0].toLowerCase();
@@ -24,3 +25,34 @@ function countBy(x, n) {
     // return result
     return result;
 }
+
+function sumArray(array) {
+    // assign a variable to the sum we will add each number to
+    let sum = 0;
+    // set the beginning highest value to -Infinity because all numbers will be above it
+    let highestValue = -Infinity;
+    // set the beginning lowest value to Infinity because all numbers will be below it
+    let lowestValue = Infinity;
+    // if the argument passed is null, an array with one value, or an empty array, return 0
+    if (array == null || array.length == 1 || array.length == 0) {
+        return 0;
+        // otherwise, iterate over the array
+    } else {
+        array.forEach(function(number) {
+            // if the number is above the current highest value, the highest value becomes that number. the first number will always be above -Infinity
+            if (number > highestValue) {
+                highestValue = number;
+            }
+            // if the number is below the current lowest value, the lowest value becomes that number. the first number will always be below Infinity
+            if (number < lowestValue) {
+                lowestValue = number;
+            }
+            // add the number to the sum regardlessly. we don't know what will end up being the highest and lowest values to omit until the iteration is over
+            sum += number;
+        });
+    };
+    // remove the highest and lowest values from the sum
+    sum = sum - highestValue - lowestValue;
+    // return the sum
+    return sum;
+};
