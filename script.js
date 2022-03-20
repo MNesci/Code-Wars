@@ -56,3 +56,7 @@ function sumArray(array) {
     // return the sum
     return sum;
 };
+
+function stringToNumber(string) {
+    return parseInt(string);
+}
