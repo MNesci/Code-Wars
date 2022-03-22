@@ -77,3 +77,12 @@ function rentalCarCost(d) {
     // return the calculated cost
     return cost;
   }
+
+  function find_average(array) {
+    // iterate over the array, adding each element to a sum (initially set to 0)
+    let total = array.reduce(function(sum, number) {
+        return sum + number;
+    }, 0)
+    // if empty array, return 0. otherwise return total sum / the length of the array
+    return total == [] ? 0 : total / array.length;
+  }
