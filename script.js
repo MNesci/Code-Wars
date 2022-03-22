@@ -60,3 +60,20 @@ function sumArray(array) {
 function stringToNumber(string) {
     return parseInt(string);
 }
+
+function rentalCarCost(d) {
+    // Assign a variable for the cost
+    let cost
+    // if rented for under 3 days, cost is $40 per day
+    if (d < 3) {
+        cost = d * 40;
+        // if rented for 3-6 days, cost is $40 per day -$20
+    } else if (3 <= d && d < 7) {
+        cost = d * 40 - 20;
+        // if rented for 7+ days, cost is $40 per day -$50
+    } else if (7 <= d) {
+        cost = d * 40 - 50;
+    };
+    // return the calculated cost
+    return cost;
+  }
