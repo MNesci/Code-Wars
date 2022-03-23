@@ -86,3 +86,11 @@ function rentalCarCost(d) {
     // if empty array, return 0. otherwise return total sum / the length of the array
     return total == [] ? 0 : total / array.length;
   }
+
+const zeroFuel = (distanceToPump, mpg, fuelLeft) => {
+    if (mpg * fuelLeft >= distanceToPump) {
+        return true;
+    } else {
+        return false;
+    }
+};
