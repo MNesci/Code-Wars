@@ -1,4 +1,4 @@
-
+/*
 
 function areYouPlayingBanjo(name) {
     // assign a variable to the first letter of name input, but always in lower case
@@ -108,3 +108,72 @@ function getDivisorsCnt(n){
     // return count
     return count;
 }
+
+function isIsogram(str) {
+    // convert string to array
+    let array = str.split('');
+    // iterate over the array
+    let result = array.every(function(character) {
+        // iterate again for each character, counting instances (not case sensitive)
+        let count = array.reduce(function(numberOfInstances, letterToCheck) {
+            if (letterToCheck.toLowerCase() === character.toLowerCase()) {
+                // increment with ++i so that increment occurs before return
+                return ++numberOfInstances;
+            } else {
+                return numberOfInstances;
+            }
+        }, 0)
+        // for each iteration of the every loop, returns true if character appeared exactly once
+        return count === 1;
+    })
+    // returns the result of our every loop
+    return result;
+}
+
+function declareWinner(fighter1, fighter2, firstAttacker) {
+    // declare variable for winner
+    let winner;
+    // while loop runs until a fighter has 0 or lower hp
+    while (fighter1.health > 0 && fighter2.health > 0) {
+        // fighter that goes first attacks
+        if (firstAttacker === fighter1.name) {
+            // if fighter 1 is first, reduce fighter 2's health
+            fighter2.health -= fighter1.damagePerAttack;
+            // if fighter 2 is down, fighter 1 wins
+            if (fighter2.health <= 0) {
+                winner = fighter1.name;
+                break;
+            }
+        } else {
+            // if fighter 2 is first, reduce fighter 1's health
+            fighter1.health -= fighter2.damagePerAttack;
+            // if fighter 1 is down, fighter 2 wins
+            if (fighter1.health <= 0) {
+                winner = fighter2.name;
+                break;
+            }
+        }
+        // fighter that goes second attacks
+        if (firstAttacker === fighter2.name) {
+            // if fighter 2 was first, reduce fighter 2's health
+            fighter2.health -= fighter1.damagePerAttack;
+            // if fighter 2 is down, fighter 1 wins
+            if (fighter2.health <= 0) {
+                winner = fighter1.name;
+                break;
+            }
+        } else {
+            // if fighter 1 was first, reduce fighter 1's health
+            fighter1.health -= fighter2.damagePerAttack;
+            // if fighter 1 is down, fighter 2 wins
+            if (fighter1.health <= 0) {
+                winner = fighter2.name;
+                break;
+            }
+        }
+    }
+    // return winner once loop has ended
+    return winner;
+}
+
+*/
