@@ -94,3 +94,17 @@ const zeroFuel = (distanceToPump, mpg, fuelLeft) => {
         return false;
     }
 };
+
+function getDivisorsCnt(n){
+    // assign a variable to count numbers that are divisors
+    let count = 0;
+    // iterate over all positive integers equal to and less than n
+    for (let i = 1; i <= n; i++) {
+        // if integer is a divisor, increase count by 1
+        if (n % i === 0) {
+            count++;
+        }
+    }
+    // return count
+    return count;
+}
