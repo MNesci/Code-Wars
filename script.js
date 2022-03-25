@@ -177,3 +177,10 @@ function declareWinner(fighter1, fighter2, firstAttacker) {
 }
 
 */
+
+function solution(str, ending) {
+    let lengthOfStr = str.length;
+    let lengthOfEnding = ending.length;
+    let sliceOfStr = str.slice(str.length - ending.length);
+    return sliceOfStr === ending;
+}
