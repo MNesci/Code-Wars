@@ -184,3 +184,11 @@ function solution(str, ending) {
     let sliceOfStr = str.slice(str.length - ending.length);
     return sliceOfStr === ending;
 }
+
+function friend(friends){
+    // iterate over the array, returning a new array
+    return friends.filter(function(person) {
+        // new array includes strings with a length of 4 characters
+        return person.length === 4;
+    })
+}
