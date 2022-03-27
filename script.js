@@ -176,7 +176,6 @@ function declareWinner(fighter1, fighter2, firstAttacker) {
     return winner;
 }
 
-*/
 
 function solution(str, ending) {
     let lengthOfStr = str.length;
@@ -191,4 +190,23 @@ function friend(friends){
         // new array includes strings with a length of 4 characters
         return person.length === 4;
     })
+}
+
+*/
+
+function removeSmallest(numbers) {
+    // iterate over array to find lowest value
+    let lowest = numbers.reduce(function(min, number) {
+        if (number < min) {
+            return min = number;
+        } else {
+            return min;
+        }
+    }, Infinity);
+    // create a copy array
+    let newNumbers = numbers.slice();
+    // remove lowest value from the new array
+    newNumbers.splice(newNumbers.indexOf(lowest), 1);
+    // return the array
+    return newNumbers;
 }
