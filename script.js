@@ -192,8 +192,6 @@ function friend(friends){
     })
 }
 
-*/
-
 function removeSmallest(numbers) {
     // iterate over array to find lowest value
     let lowest = numbers.reduce(function(min, number) {
@@ -209,4 +207,32 @@ function removeSmallest(numbers) {
     newNumbers.splice(newNumbers.indexOf(lowest), 1);
     // return the array
     return newNumbers;
+}
+
+*/
+
+function roundToNext5(n) {
+    // check if n is divisible by 5
+    if (n % 5 === 0) {
+        // n is already divisible by 5, so return n
+        return n;
+    // if positive
+    } else if (n > 0) {
+        // find the remainer
+        let remainder = n % 5;
+        // find the difference between 5 and the remainder
+        amountToRoundUp = 5 - remainder;
+        // round up by the difference
+        n += amountToRoundUp;
+        // return n
+        return n;
+    // if negative
+    } else {
+        // find remainder
+        let remainder = n % 5;
+        // subtract from n. remainder is -ive, so this rounds up
+        n -= remainder;
+        // return n
+        return n;
+    }
 }
