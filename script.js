@@ -209,8 +209,6 @@ function removeSmallest(numbers) {
     return newNumbers;
 }
 
-*/
-
 function roundToNext5(n) {
     // check if n is divisible by 5
     if (n % 5 === 0) {
@@ -235,4 +233,12 @@ function roundToNext5(n) {
         // return n
         return n;
     }
+}
+
+*/
+
+function smallEnough(a, limit) {
+    return a.every(function(value) {
+        return value <= limit;
+    })
 }
