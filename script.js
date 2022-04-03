@@ -235,7 +235,6 @@ function roundToNext5(n) {
     }
 }
 
-*/
 
 function smallEnough(a, limit) {
     return a.every(function(value) {
@@ -297,4 +296,22 @@ function sortByLength(array) {
         return a.length - b.length;
     })
     return array;
+}
+
+*/
+
+function flattenAndSort(array) {
+    // create a new array set to the first element in the original array
+    let newArray = array[0];
+    // for each element after the first, concatenate it into the new array
+    for(let i = 1; i < array.length; i++) {
+        newArray = newArray.concat(array[i]);
+    }
+    console.log(newArray)
+    // sort the new array in integer order
+    newArray.sort(function(a, b) {
+        return a - b;
+    })
+    // return the array
+    return newArray;
 }
