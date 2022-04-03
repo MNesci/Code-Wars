@@ -242,3 +242,59 @@ function smallEnough(a, limit) {
         return value <= limit;
     })
 }
+
+function checkExam(array1, array2) {
+    // use .reduce() to tally up the totalScore, iterating over each answer
+    let totalScore = array1.reduce(function(score, answer, index) {
+        // if answer is right, increase score by 4
+        if (answer === array2[index]) {
+            return score + 4;
+        // if answer is black, don't change score
+        } else if (array2[index] === '') {
+            return score + 0;
+        } else {
+        // if answer is neither right nor blank, it is wrong. decrease score by 1
+            return score - 1;
+        }
+    }, 0);
+    // if totalScore is less than 0, return 0 instead of totalScore
+    if (totalScore < 0) {
+        return 0;
+    // otherwise, return the totalScore
+    } else {
+        return totalScore;
+    }
+}
+
+function highAndLow(numbers) {
+    // create an array of numbers
+    let arrayOfNumbers = numbers.split(' ');
+    console.log(arrayOfNumbers)
+    // find the highest number in the array by iterating over the array
+    let highestNumber = arrayOfNumbers.reduce(function(highest, number) {
+        // if number is higher than the current highest, it becomes the current highest
+        if (parseInt(number) > highest) {
+            return highest = number;
+        } else {
+            return highest;
+        }
+    }, -Infinity);
+    // find the lowest number in the array by iterating over the array
+    let lowestNumber = arrayOfNumbers.reduce(function(lowest, number) {
+        // if number is lower than the current lowest, it becomes the current lowest
+        if (parseInt(number) < lowest) {
+            return lowest = number;
+        } else {
+            return lowest;
+        }
+    }, Infinity);
+    // return the highest and lowest
+    return `${highestNumber} ${lowestNumber}`
+}
+
+function sortByLength(array) {
+    array.sort(function(a, b) {
+        return a.length - b.length;
+    })
+    return array;
+}
