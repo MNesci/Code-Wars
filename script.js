@@ -298,8 +298,6 @@ function sortByLength(array) {
     return array;
 }
 
-*/
-
 function flattenAndSort(array) {
     // create a new array set to the first element in the original array
     let newArray = array[0];
@@ -314,4 +312,22 @@ function flattenAndSort(array) {
     })
     // return the array
     return newArray;
+}
+
+*/
+
+function checkCoupon(enteredCode, correctCode, currentDate, expirationDate) {
+    // if the codes don't match, return false
+    if (enteredCode !== correctCode) {
+        return false;
+    };
+    // create date objects for each date
+    let currentDateObject = new Date(currentDate);
+    let expirationDateObject = new Date(expirationDate)
+    // if the current date is after the expiration date, return false
+    if (currentDateObject.getTime() > expirationDateObject.getTime()) {
+        return false
+    };
+    // otherwise, return true
+    return true;
 }
