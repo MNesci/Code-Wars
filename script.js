@@ -314,8 +314,6 @@ function flattenAndSort(array) {
     return newArray;
 }
 
-*/
-
 function checkCoupon(enteredCode, correctCode, currentDate, expirationDate) {
     // if the codes don't match, return false
     if (enteredCode !== correctCode) {
@@ -330,4 +328,23 @@ function checkCoupon(enteredCode, correctCode, currentDate, expirationDate) {
     };
     // otherwise, return true
     return true;
+}
+
+*/
+
+function validatePIN(pin) {
+    // if the length of the string isn't 4 or 6, return false
+    if (pin.length !== 4 && pin.length !== 6) {
+        console.log(pin.length)
+        return false;
+    };
+    // create an array of characters
+    let pinArray = pin.split('');
+    console.log(pinArray)
+    // if any character in the array isn't an integer, return false. otherwise, return true
+    // check if something is an integer by converting to an int, and checking if the output is NaN
+    return pinArray.every(function(character) {
+        console.log(!isNaN(parseInt(character)));
+        return !isNaN(parseInt(character));
+    })
 }
