@@ -347,8 +347,6 @@ function validatePIN(pin) {
     })
 }
 
-*/
-
 function number(busStops) {
     // iterate over the array, returning the resulting accumulator
     return busStops.reduce(function(passengers, stop) {
@@ -357,3 +355,48 @@ function number(busStops) {
     // start at 0 passengers
     }, 0)
 };
+
+*/
+
+function getEvenNumbers(numbersArray) {
+    // iterate over the array
+    return numbersArray.filter(function(number) {
+        // if the number is even, pass it to the array we will return
+        return number % 2 === 0;
+    })
+}
+
+function barista(coffees) {
+    // sort the times to brew from smallest to largest
+    // the wait time is cumulative, so this will minimize wait times
+    coffees.sort(function(a, b) {
+        return a - b;
+    });
+
+    // create an array to store the wait time for each customer
+    let waitTimes = [];
+
+    // iterate over the orders
+    coffees.reduce(function(waitTime, brewTime, index) {
+        // if first customer, no cleaning time
+        if (index === 0) {
+            // wait time is just brew time
+            waitTime = waitTime + brewTime;
+            // if not first customer, add cleaning time
+        } else {
+            // wait time is brew time and cleaning time
+            waitTime = waitTime + brewTime + 2;
+        }
+        // store the wait time in the object
+        waitTimes.push(waitTime);
+        // return the accumulator
+        return waitTime;
+    // initial wait time is 0 minutes
+    }, 0);
+
+    // sum the wait times and return
+    return waitTimes.reduce(function(totalWaitTime, waitTime) {
+        return totalWaitTime += waitTime;
+    // initial wait time is 0 minutes
+    }, 0)
+}
