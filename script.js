@@ -330,8 +330,6 @@ function checkCoupon(enteredCode, correctCode, currentDate, expirationDate) {
     return true;
 }
 
-*/
-
 function validatePIN(pin) {
     // if the length of the string isn't 4 or 6, return false
     if (pin.length !== 4 && pin.length !== 6) {
@@ -348,3 +346,14 @@ function validatePIN(pin) {
         return !isNaN(parseInt(character));
     })
 }
+
+*/
+
+function number(busStops) {
+    // iterate over the array, returning the resulting accumulator
+    return busStops.reduce(function(passengers, stop) {
+        // add number of passengers getting on. subtract number of passengers getting off
+        return passengers + stop[0] - stop[1];
+    // start at 0 passengers
+    }, 0)
+};
