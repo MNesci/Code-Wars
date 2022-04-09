@@ -356,8 +356,6 @@ function number(busStops) {
     }, 0)
 };
 
-*/
-
 function getEvenNumbers(numbersArray) {
     // iterate over the array
     return numbersArray.filter(function(number) {
@@ -400,3 +398,65 @@ function barista(coffees) {
     // initial wait time is 0 minutes
     }, 0)
 }
+
+function reverseWords(str) {
+    // create an array of words from the string
+    let array = str.split(' ');
+    // iterate over the array, reversing the words
+    array.forEach(function(word, index) {
+        // split the word into an array
+        wordArray = word.split('');
+        // reverse the array
+        wordArray.reverse();
+        // rejoin the array into a string, and assign it back to the word
+        array[index] = wordArray.join('');
+    })
+    // create and return a string from the array
+    return array.join(' ');
+}
+
+function reverseWords(str) {
+    // create an array of words from the string
+    let array = str.split(' ');
+    // iterate over the array, reversing the words
+    for(let arrayIndex = 0; arrayIndex < array.length; arrayIndex++) {
+        // create an empty string to house the reversed word
+        let reversedWord = '';
+        // iterate over each letter in the word
+        for(let wordIndex = 0; wordIndex < array[arrayIndex].length; wordIndex++) {
+            // add each letter to the beginning of the word
+            reversedWord = array[arrayIndex][wordIndex] + reversedWord;
+        }
+        // assign the reversed word to its place in the array
+        array[arrayIndex] = reversedWord;
+    }
+    // create and return a string from the array
+    return array.join(' ');
+}
+
+*/
+
+function isSortedAndHow(array) {
+    // iterate over the array, comparing each value to the next
+    let ascending = array.every(function(value, index) {
+        // returns true if value is less than next value
+        // also returns true if last value because nothing to compare
+        return value <= array[index+1] || index === array.length - 1;
+    });
+    // if ascending is true, sorted ascending
+    if (ascending) {
+        return 'yes, ascending';
+    };
+    // iterate over the array, comparing each value to the next
+    let descending = array.every(function(value, index) {
+        // returns true if value is greater than next value
+        // also returns true if last value because nothing to compare
+        return value >= array[index+1] || index === array.length - 1;
+    });
+    // if descending is true, sorted descending
+    if (descending) {
+        return 'yes, descending';
+    };
+    // if neither is true, return 'no'
+    return 'no';
+};
