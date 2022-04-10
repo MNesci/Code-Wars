@@ -434,8 +434,6 @@ function reverseWords(str) {
     return array.join(' ');
 }
 
-*/
-
 function isSortedAndHow(array) {
     // iterate over the array, comparing each value to the next
     let ascending = array.every(function(value, index) {
@@ -460,3 +458,24 @@ function isSortedAndHow(array) {
     // if neither is true, return 'no'
     return 'no';
 };
+
+*/
+
+function arrAdder(arr) {
+    // iterate over the length of the inner arrays. this is how many words we have
+    return arr[0].reduce(function(string, letter, index) {
+        // iterate over the arrays, adding their letter at the outer loop's index to a string
+        // not last word, add a space at the end of the word
+        if(index < arr[0].length - 1) {
+            return string + arr.reduce(function(word, array) {
+                return word + array[index];
+            }, '') + ' ';
+        // last word, don't add a space at the end
+        } else {
+            return string + arr.reduce(function(word, array) {
+                return word + array[index];
+            }, '');
+        }
+    }, '')  
+}
+    
