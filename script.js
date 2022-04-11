@@ -459,8 +459,6 @@ function isSortedAndHow(array) {
     return 'no';
 };
 
-*/
-
 function arrAdder(arr) {
     // iterate over the length of the inner arrays. this is how many words we have
     return arr[0].reduce(function(string, letter, index) {
@@ -478,4 +476,47 @@ function arrAdder(arr) {
         }
     }, '')  
 }
+
+*/
     
+function mxdiflg(a1, a2) {
+    // if both arrays are empty, return -1
+    if(a1.length === 0 || a2.length === 0) {
+        return -1;
+    };
+    // find the max length of strings in a1 by iterating over them
+    let a1MaxLength = a1.reduce(function(maxLength, string) {
+        // if string's length is greater than current max, it becomes max
+        // otherwise, current max doesn't change
+        return (maxLength < string.length ? maxLength = string.length : maxLength);
+    }, 0);
+    console.log(`A1 Max: ${a1MaxLength}`);
+    // find the min length of strings in a1 by iterating over them
+    let a1MinLength = a1.reduce(function(minLength, string) {
+        // if string's length is less than current min, it becomes min
+        // otherwise, current min doesn't change
+        return (minLength > string.length ? minLength = string.length : minLength);
+    }, Infinity);
+    console.log(`A1 Min: ${a1MinLength}`);
+    // find the max length of strings in a2 by iterating over them
+    let a2MaxLength = a2.reduce(function(maxLength, string) {
+        // if string's length is greater than current max, it becomes max
+        // otherwise, current max doesn't change
+        return (maxLength < string.length ? maxLength = string.length : maxLength);
+    }, 0);
+    console.log(`A2 Max: ${a2MaxLength}`);
+    // find the min length of strings in a1 by iterating over them
+    let a2MinLength = a2.reduce(function(minLength, string) {
+        // if string's length is less than current min, it becomes min
+        // otherwise, current min doesn't change
+        return (minLength > string.length ? minLength = string.length : minLength);
+    }, Infinity);
+    console.log(`A2 Min: ${a2MinLength}`);
+    // find the differences between a1Max and a2Min, and a2Max and a1Min
+    if(a1MaxLength - a2MinLength > a2MaxLength - a1MinLength) {
+    // return the greater difference
+        return a1MaxLength - a2MinLength;
+    } else {
+        return a2MaxLength - a1MinLength;
+    };
+};
