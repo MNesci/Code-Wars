@@ -476,8 +476,6 @@ function arrAdder(arr) {
         }
     }, '')  
 }
-
-*/
     
 function mxdiflg(a1, a2) {
     // if both arrays are empty, return -1
@@ -518,5 +516,42 @@ function mxdiflg(a1, a2) {
         return a1MaxLength - a2MinLength;
     } else {
         return a2MaxLength - a1MinLength;
+    };
+};
+
+*/
+
+function xMarksTheSpot(input) {
+    // assign variables for coordinate output
+    let x;
+    let y;
+    // iterate over the array, looking for 'x' in the inner arrays
+    totalCount = input.reduce(function(count, array, index) {
+        // if 'x' is found multiple times
+        if (array.indexOf('x') !== array.lastIndexOf('x')) {
+            return count += 2;
+        // if x is found once
+        } else if (array.includes('x')) {
+            // note the current index (x coord)
+            x = index;
+            console.log(x)
+            // note the index of 'x' in the inner array (y coord)
+            y = array.indexOf('x');
+            console.log(y);
+            // increment count
+            return count += 1;
+        // if x isn't found
+        } else {
+            return count;
+        };
+    // count initial value of 0
+    }, 0)
+    console.log(`total count is ${totalCount}`);
+    // if total count isn't 1, return empty array
+    if (totalCount !== 1) {
+        return [];
+        // if total is 1, return [x, y]
+    } else {
+        return [x, y];
     };
 };
