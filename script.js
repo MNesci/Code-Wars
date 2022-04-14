@@ -519,8 +519,6 @@ function mxdiflg(a1, a2) {
     };
 };
 
-*/
-
 function xMarksTheSpot(input) {
     // assign variables for coordinate output
     let x;
@@ -553,5 +551,53 @@ function xMarksTheSpot(input) {
         // if total is 1, return [x, y]
     } else {
         return [x, y];
+    };
+};
+
+function longest(words) {
+    // iterate over the array, returning the longest length
+    return words.reduce(function(length, word) {
+        // if the word is longer than current longest, it becomes longest
+        if (word.length > length) {
+            return length = word.length;
+        } else {
+            // otherwise, current longest doesn't change
+            return length;
+        };
+        // initial length set to 0
+    }, 0);
+};
+
+function unusedDigits(...numbers) {
+    // assign a string of all digits to a variable
+    console.log(numbers)
+    let digits = '0123456789';
+    // iterate over the array of numbers
+    numbers.forEach(function(number) {
+        // convert the number to a string
+        let string = number.toString();
+        // iterate over the digits in the number
+        for (let i = 0; i < string.length; i++) {
+            // for each digit, replace its occurence in the string with ''
+            digits = digits.replace(string[i], '');
+        }
+    })
+    // return string of remaining digits
+    return digits;
+};
+
+*/
+
+function oddOrEven(n) {
+    console.log(n)
+    // if divisible by 4, even
+    if (n % 4 === 0) {
+        return 'Even';
+    // if divisible by 2 but not 4, odd
+    } else if (n % 2 === 0) {
+        return 'Odd';
+    // if divisible by neither, either
+    } else {
+        return 'Either';
     };
 };
