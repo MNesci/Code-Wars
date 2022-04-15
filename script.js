@@ -586,8 +586,6 @@ function unusedDigits(...numbers) {
     return digits;
 };
 
-*/
-
 function oddOrEven(n) {
     console.log(n)
     // if divisible by 4, even
@@ -601,3 +599,19 @@ function oddOrEven(n) {
         return 'Either';
     };
 };
+
+*/
+
+function stringMerge(string1, string2, letter) {
+    // find first index of letter in each word
+    let index1 = string1.indexOf(letter);
+    let index2 = string2.indexOf(letter);
+    // create a string from beginning of string1 to the index
+    let substring1 = string1.substring(0, index1);
+    // create a string from the index to the end of string2
+    // this includes the letter
+    let substring2 = string2.substring(index2);
+    // concatenate the strings together and return
+    return `${substring1}${substring2}`;
+};
+
