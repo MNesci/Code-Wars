@@ -600,8 +600,6 @@ function oddOrEven(n) {
     };
 };
 
-*/
-
 function stringMerge(string1, string2, letter) {
     // find first index of letter in each word
     let index1 = string1.indexOf(letter);
@@ -615,3 +613,64 @@ function stringMerge(string1, string2, letter) {
     return `${substring1}${substring2}`;
 };
 
+*/
+
+function giveChange(amount) {
+    // assign variables for the number of each bill
+    let numberOf1Bills = 0;
+    let numberOf5Bills = 0;
+    let numberOf10Bills = 0;
+    let numberOf20Bills = 0;
+    let numberOf50Bills = 0;
+    let numberOf100Bills = 0;
+    // check if amount >= 100
+    if (amount >= 100) {
+        // subtract amount % 100 from amount. divide by 100
+        // this is how many $100 we have
+        numberOf100Bills = (amount - (amount % 100)) / 100
+        // set amount to the remainder once the $100 bills are removed
+        amount = amount % 100;
+    };
+    // check if amount >= 50
+    if (amount >= 50) {
+        // subtract amount % 50 from amount. divide by 50
+        // this is how many $50 we have
+        numberOf50Bills = (amount - (amount % 50)) / 50
+        // set amount to the remainder once the $50 bills are removed
+        amount = amount % 50;
+    };
+    // check if amount >= 20
+    if (amount >= 20) {
+        // subtract amount % 20 from amount. divide by 20
+        // this is how many $20 we have
+        numberOf20Bills = (amount - (amount % 20)) / 20
+        // set amount to the remainder once the $20 bills are removed
+        amount = amount % 20;
+    };
+    // check if amount >= 10
+    if (amount >= 10) {
+        // subtract amount % 10 from amount. divide by 10
+        // this is how many $10 we have
+        numberOf10Bills = (amount - (amount % 10)) / 10
+        // set amount to the remainder once the $10 bills are removed
+        amount = amount % 10;
+    };
+    // check if amount >= 5
+    if (amount >= 5) {
+        // subtract amount % 5 from amount. divide by 5
+        // this is how many $5 we have
+        numberOf5Bills = (amount - (amount % 5)) / 5
+        // set amount to the remainder once the $5 bills are removed
+        amount = amount % 5;
+    };
+    // check if amount >= 1
+    if (amount >= 1) {
+        // subtract amount % 1 from amount. divide by 1
+        // this is how many $1 we have
+        numberOf1Bills = (amount - (amount % 1)) / 1
+        // set amount to the remainder once the $1 bills are removed
+        amount = amount % 1;
+    };
+    // return array of the numbers of bills
+    return [numberOf1Bills, numberOf5Bills, numberOf10Bills, numberOf20Bills, numberOf50Bills, numberOf100Bills];
+};
