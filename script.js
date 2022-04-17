@@ -613,8 +613,6 @@ function stringMerge(string1, string2, letter) {
     return `${substring1}${substring2}`;
 };
 
-*/
-
 function giveChange(amount) {
     // assign variables for the number of each bill
     let numberOf1Bills = 0;
@@ -674,3 +672,24 @@ function giveChange(amount) {
     // return array of the numbers of bills
     return [numberOf1Bills, numberOf5Bills, numberOf10Bills, numberOf20Bills, numberOf50Bills, numberOf100Bills];
 };
+
+function solution(nums) {
+    if (nums === null) {
+        return [];
+    } else {
+        return nums.sort(function(a, b) {
+            return a - b;
+        });
+    };
+};
+
+*/
+
+function chain(input, fs) {
+    // iterate over the fs array
+    return fs.reduce(function(currentInput, element) {
+        // output of the function becomes the input for the next one
+        return element(currentInput);
+    }, input);
+};
+
