@@ -683,13 +683,30 @@ function solution(nums) {
     };
 };
 
-*/
-
 function chain(input, fs) {
     // iterate over the fs array
     return fs.reduce(function(currentInput, element) {
         // output of the function becomes the input for the next one
         return element(currentInput);
     }, input);
+};
+
+*/
+
+function zeroAndOne(s) {
+    // split the string into an array of characters
+    let array = s.split('');
+    // iterate over the array
+    for (let i = 0; i < array.length; i++) {
+        // check if current character is different from next character
+        if (array[i] !== array[i+1] && array[i+1] < array.length) {
+            // remove the two characters
+            array.splice(i, 2);
+            // decrement i to avoid skipping subsequent characters
+            i--;
+        };
+    };
+    // return length of the array
+    return array.length;
 };
 
