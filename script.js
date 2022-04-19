@@ -691,8 +691,6 @@ function chain(input, fs) {
     }, input);
 };
 
-*/
-
 function zeroAndOne(s) {
     // split the string into an array of characters
     let array = s.split('');
@@ -710,3 +708,17 @@ function zeroAndOne(s) {
     return array.length;
 };
 
+*/
+
+function openOrSenior(data) {
+    // iterate over the list and return an array
+    return data.map(function(member) {
+        // if age > 54 and handicap > 7, senior
+        if (member[0] > 54 && member[1] > 7) {
+            return 'Senior';
+        // otherwise, open
+        } else {
+            return 'Open';
+        };
+    });    
+};
