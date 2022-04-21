@@ -708,8 +708,6 @@ function zeroAndOne(s) {
     return array.length;
 };
 
-*/
-
 function openOrSenior(data) {
     // iterate over the list and return an array
     return data.map(function(member) {
@@ -722,3 +720,9 @@ function openOrSenior(data) {
         };
     });    
 };
+
+*/
+
+function root(x, n) {
+    return x ** (1/n);
+}
