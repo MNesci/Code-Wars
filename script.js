@@ -751,4 +751,19 @@ function likes(names) {
     };
 };
 
+function isNarcissistic(n) {
+    // create an array of the digits
+    let arrayOfDigits = [];
+    // add each digit to the array
+    for (let i = 0; i < n.toString().length; i++) {
+        arrayOfDigits.push(Number(n.toString()[i]));
+    };
+    // iterate over the array, exponentiating and summing
+    let sumOfExponentiations = arrayOfDigits.reduce(function(sum, digit) {
+        return sum + digit ** arrayOfDigits.length;
+    }, 0);
+    // return boolean
+    return sumOfExponentiations === n;
+};
+
 */
