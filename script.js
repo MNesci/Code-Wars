@@ -721,8 +721,34 @@ function openOrSenior(data) {
     });    
 };
 
-*/
-
 function root(x, n) {
     return x ** (1/n);
 }
+
+function squareSum(numbers) {
+    // iterate over the array, squaring the numbers
+    let squares = numbers.map(function(number) {
+        return number ** 2;
+    });
+    // iterate over the array of squares, summing them
+    return squares.reduce(function(sum, square) {
+        return sum + square;
+    }, 0);
+};
+
+function likes(names) {
+    // flow control based on the value of names.length
+    if (names.length === 0) {
+        return 'no one likes this';
+    } else if (names.length === 1) {
+        return `${names[0]} likes this`;
+    } else if (names.length === 2) {
+        return `${names[0]} and ${names[1]} like this`;
+    } else if (names.length === 3) {
+        return `${names[0]}, ${names[1]} and ${names[2]} like this`;
+    } else {
+        return `${names[0]}, ${names[1]} and ${names.length - 2} others like this`
+    };
+};
+
+*/
