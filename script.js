@@ -766,4 +766,40 @@ function isNarcissistic(n) {
     return sumOfExponentiations === n;
 };
 
+function positiveSum(arr) {
+  // iterate over the array, returning the sum
+  return arr.reduce(function(sum, number) {
+    // if positive, add to the sum
+    if (number > 0) {
+      return sum + number;
+    } else {
+      return sum;
+    };
+  }, 0);
+};
+
+function expandedForm(num) {
+  // create an array of digits
+  let arrayOfDigits = num.toString().split('');
+  // if one digit, return num
+  if (arrayOfDigits.length === 1) {
+    return num.toString();
+  };
+  // iterate over the array
+  return arrayOfDigits.reduce(function(expanded, digit, index) {
+    // if digit is 0, skip
+    if (digit == 0) {
+      return expanded;
+    };
+    // determine how many 0s the digit needs
+    let numberOfZeros = arrayOfDigits.length - index - 1;
+    let zeros = '0'.repeat(numberOfZeros);
+    if (index === 0) {
+      return `${digit}${zeros}`;
+    } else {
+      return `${expanded} + ${digit}${zeros}`;
+    };
+  }, '');
+};
+
 */
