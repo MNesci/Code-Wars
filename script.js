@@ -802,4 +802,52 @@ function expandedForm(num) {
   }, '');
 };
 
+String.prototype.toJadenCase = function() {
+    // split the string that this method is called on
+    let arrayOfWords = this.split(' ');
+    // capitalize each word
+    let capitalizedArrayOfWords = arrayOfWords.map(function(word) {
+        return word[0].toUpperCase() + word.slice(1);
+    });
+    // reconnect the words
+    return capitalizedArrayOfWords.join(' ');
+};
+
+function booleanToString(b) {
+    if (b === true) {
+        return 'true';
+    } else {
+        return 'false';
+    };
+};
+
+function findEvenIndex(arr) {
+    // assign a variable for the index to return
+    let evenIndex;
+    // iterate over the array
+    let boolean = arr.some(function(number, index, array) {
+        // sum the integers on the left side of the index
+        let leftSideSum = 0;
+        for (let i = 0; i < index; i++) {
+            leftSideSum += array[i];
+        };
+        // sum the integers on the right side of the index
+        let rightSideSum = 0;
+        for (let i = index + 1; i < array.length; i++) {
+            rightSideSum += array[i];
+        };
+        if (leftSideSum === rightSideSum) {
+            evenIndex = index;
+        };
+        return leftSideSum === rightSideSum;
+    });
+    // if boolean is false, no such index. return -1
+    if (!boolean) {
+        return -1;
+        // otherwise, return the evenIndex
+    } else {
+        return evenIndex;
+    };
+};
+
 */
