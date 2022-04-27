@@ -850,4 +850,15 @@ function findEvenIndex(arr) {
     };
 };
 
+function digitize(n) {
+  // convert to string, and then split into an array
+  let array = n.toString().split('');
+  // reverse the array
+  array.reverse();
+  // convert the strings to numbers
+  return array.map(function(string) {
+    return Number(string);
+  });
+};
+
 */
