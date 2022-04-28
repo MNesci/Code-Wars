@@ -861,4 +861,113 @@ function digitize(n) {
   });
 };
 
+function direction(facing, turn) {
+    // determine how many degrees to turn
+    let degreesToTurn = turn % 360;
+    // determine how many directions to shift by
+    let directionsToShift = degreesToTurn / 45;
+    // convert current direction to a number
+    let startingPosition;
+    switch (facing) {
+        case 'N':
+            startingPosition = 0;
+            break;
+        case 'NE':
+            startingPosition = 1;
+            break;
+        case 'E':
+            startingPosition = 2;
+            break;
+        case 'SE':
+            startingPosition = 3;
+            break;
+        case 'S':
+            startingPosition = 4;
+            break;
+        case 'SW':
+            startingPosition = 5;
+            break;
+        case 'W':
+            startingPosition = 6;
+            break;
+        case 'NW':
+            startingPosition = 7;
+            break;
+    }
+    // determine current position
+    let currentPosition = startingPosition + directionsToShift;
+    // if current position is negative, add 8 to get it between 0 and 7
+    if (currentPosition < 0) {
+        currentPosition += 8;
+    };
+    // if current position is above 7, subtract 8 to get it between 0 and 7
+    if (currentPosition > 7) {
+        currentPosition -= 8;
+    };
+    // determine new direction
+    let newDirection;
+    switch (currentPosition) {
+        case 0:
+            newDirection = 'N';
+            break;
+        case 1:
+            newDirection = 'NE';
+            break;
+        case 2:
+            newDirection = 'E';
+            break;
+        case 3:
+            newDirection = 'SE';
+            break;
+        case 4:
+            newDirection = 'S';
+            break;
+        case 5:
+            newDirection = 'SW';
+            break;
+        case 6:
+            newDirection = 'W';
+            break;
+        case 7:
+            newDirection = 'NW';
+            break;
+    };
+    return newDirection;
+};
+
+function lastManStanding(n) {
+    // create an array of positive integers, up to and including n
+    let array = [];
+    for (let i = 1; i <= n; i++) {
+        array.push(i);
+    };
+    // remove every other number, alternating starting from left and right
+
+    // set the side to remove from
+    let side = 'left';
+    // remove until only one number remains
+    while (array.length !== 1) {
+        if (side === 'left') {
+            // remove every other number
+            // splicing and incrementing will cause every other number to be skipped
+            for (let i = 0; i < array.length; i++) {
+                array.splice(i, 1);
+            };
+            // the other side will be removed from next
+            side = 'right';
+        } else {
+            // remove every other number
+            // splicing and decrementing will remove all numbers due to the -
+            // index of the last element decreasing evenly with a decrement
+            // reduce i by 2 to skip the next element
+            for (let i = array.length - 1; i >= 0; i -= 2) {
+                array.splice(i, 1);
+            };
+            // the other side will be removed from next
+            side = 'left';
+        };
+    };
+    return array[0];
+};
+
 */
