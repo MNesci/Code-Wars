@@ -970,4 +970,45 @@ function lastManStanding(n) {
     return array[0];
 };
 
+function findOdd(A) {
+    // iterate over the array, adding each unique number to a new array
+    let uniqueNumbersArray = [];
+    A.forEach(function(number) {
+        if (!uniqueNumbersArray.includes(number)) {
+            uniqueNumbersArray.push(number);
+        };
+    });
+    
+    // count how many times each unique number appears in the original array
+    let count;
+    let oddNumber;
+    uniqueNumbersArray.forEach(function(number) {
+        count = A.reduce(function(total, currentNumber) {
+            if (number === currentNumber) {
+                return total += 1;
+            } else {
+                return total;
+            };
+        }, 0);
+        // if count is odd, that is the number we want
+        if (count % 2 !== 0) {
+            oddNumber = number;
+        };
+    });
+    return oddNumber;
+};
+
+function maskify(cc) {
+    // convert the string into an array
+    let array = cc.split('');
+    // iterate over the array, changing all but the last four characters
+    for (let i = 0; i < array.length; i++) {
+        // if not last 4 characters, change to #
+        if (i < array.length - 4) {
+            array[i] = '#';
+        };
+    };
+    return array.join('');
+};
+
 */
