@@ -1011,4 +1011,16 @@ function maskify(cc) {
     return array.join('');
 };
 
+function arrayDiff(a, b) {
+    // iterate over array B
+    b.forEach(function(number) {
+        // as long as the number is present in array A, remove it
+        while (a.indexOf(number) !== -1) {
+            a.splice(a.indexOf(number), 1);
+        };
+    });
+    // return array A
+    return a;
+};
+
 */
