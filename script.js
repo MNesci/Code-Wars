@@ -1030,4 +1030,29 @@ function DNAtoRNA(dna) {
     return dna;
 };
 
+function getSum( a,b ) {
+   // check if A and B are equal, and if not, which is greater
+  let greaterNumber;
+  let lesserNumber;
+  if (a === b) {
+    return a;
+  // check which is greater
+  } else if (a > b) {
+    greaterNumber = a;
+    lesserNumber = b;
+  } else {
+    greaterNumber = b;
+    lesserNumber = a;
+  };
+  // iterate over the integers and sum them
+  let sum = 0;
+  for (let i = lesserNumber; i <= greaterNumber; i++) {
+    sum += i;
+  };
+  return sum;
+  
+}
+
+
+
 */
