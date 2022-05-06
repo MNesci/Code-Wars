@@ -1064,6 +1064,15 @@ function findShort(s) {
     }, Infinity);
 };
 
+function bingo(a) {
+    // check if the array includes b(2), i(9), n(14), g(7), and o(15)
+    if (a.includes(2) && a.includes(9) && a.includes(14) && a.includes(7) && a.includes(15)) {
+        return 'WIN';
+    } else {
+        return 'LOSE';
+    };
+};
+
 
 
 */
