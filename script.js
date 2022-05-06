@@ -1053,6 +1053,17 @@ function getSum( a,b ) {
   
 }
 
+function findShort(s) {
+    // create an array of the words
+    let arrayOfWords = s.split(' ');
+    // iterate over the array
+    return arrayOfWords.reduce(function(length, word) {
+        console.log(word)
+        // if word's length is less than length, it becomes the length
+        return word.length < length ? word.length : length;
+    }, Infinity);
+};
+
 
 
 */
