@@ -1073,6 +1073,17 @@ function bingo(a) {
     };
 };
 
-
+function findChildren(dancingBrigade) {
+    // convert the string to an array
+    let arrayOfLetters = dancingBrigade.split('');
+    // sort the array (all uppercase then all lowercase)
+    arrayOfLetters.sort();
+    // sort the array (ignoring case)
+    arrayOfLetters.sort(function(a, b) {
+        return a.toLowerCase().localeCompare(b.toLowerCase());
+    });
+    // convert the array to a string, and return
+    return arrayOfLetters.join('');
+}
 
 */
