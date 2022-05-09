@@ -1086,4 +1086,20 @@ function findChildren(dancingBrigade) {
     return arrayOfLetters.join('');
 }
 
+function dontGiveMeFive(start, end) {
+    // create an array of numbers from start to end
+    let arrayOfNumbers = [];
+    for (let i = start; i <= end; i++) {
+        arrayOfNumbers.push(i);
+    };
+    // check the array for numbers with 5 in them, and remove such numbers
+    for (let i = 0; i < arrayOfNumbers.length; i++) {
+        if (arrayOfNumbers[i].toString().includes('5')) {
+            arrayOfNumbers.splice(i, 1);
+            i--
+        };
+    };
+    return arrayOfNumbers.length;
+};
+
 */
