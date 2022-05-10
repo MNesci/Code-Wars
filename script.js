@@ -1102,4 +1102,49 @@ function dontGiveMeFive(start, end) {
     return arrayOfNumbers.length;
 };
 
+function solve(arr) {
+    // create an array of letters in the alphabet to compare to
+    let alphabetArray = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
+             'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+    // iterate over each word, returning an array of numbers based on each word
+    return arr.map(function(word) {
+        // convert the word to an array of characters
+        let arrayOfCharacters = word.split('');
+        // iterate over the characters, counting how many are in their alphabet positions
+        return arrayOfCharacters.reduce(function(count, letter, index) {
+            if (letter.toLowerCase() === alphabetArray[index]) {
+                return count += 1;
+            } else {
+                return count;
+            }
+        }, 0);
+    });
+};
+
+function deleteNth(arr, n) {
+    // create an object to hold an array of unique numbers,
+            //the current count of each, and the array to return
+    let obj = {
+        arrayOfUniqueNumbers: [],
+        count: {},
+        arrayToReturn: [],
+    };
+    // add each number to the array once
+    arr.forEach(function(number) {
+        if (!obj.arrayOfUniqueNumbers.includes(number)) {
+            obj.arrayOfUniqueNumbers.push(number);
+            obj.count[number] = 0;
+        };
+    });
+    // add each number to arrayToReturn until it is at count n
+    arr.forEach(function(number) {
+        if (obj.count[number] < n) {
+            obj.arrayToReturn.push(number);
+            obj.count[number] += 1;
+        };
+    });
+    // return arrayToReturn
+    return obj.arrayToReturn;
+};
+
 */
