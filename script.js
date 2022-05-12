@@ -1150,6 +1150,10 @@ function deleteNth(arr, n) {
 function isSquare(n) {
     // if the remainder of the root / 1 is 0, it is an integer
     return Math.sqrt(n) % 1 === 0;  
-}
+};
+
+function setAlarm(employed, vacation) {
+    return employed && !vacation;
+};
 
 */
