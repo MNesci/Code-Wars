@@ -1156,4 +1156,21 @@ function setAlarm(employed, vacation) {
     return employed && !vacation;
 };
 
+function sumDigPow(a, b) {
+    // create an array of numbers from a to b, inclusively
+    let arrayOfNumbersInRange = [];
+    for (let i = a; i <= b; i++) {
+        arrayOfNumbersInRange.push(i);
+    };
+    // iterate over the array of numbers
+    return arrayOfNumbersInRange.filter(function(number) {
+        // compare the number to the sum of its digits exponentiated incrementally
+        // if equal, add to the array being returned
+        return number === number.toString().split('').reduce((sum, digit, index) => {
+            // exponent is index + 1 because arrays are 0 based
+            return sum + Number(digit) ** (index + 1);
+        }, 0);
+    });
+};
+
 */
