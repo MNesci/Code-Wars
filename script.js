@@ -1177,4 +1177,38 @@ function filter_list(l) {
     return l.filter(element => Number.isInteger(element));
 };
 
+function sortArray(array) {
+    // iterate over the array, creating a new array indicating even and odd positions
+    let positionsArray = array.map(number => number % 2 === 0 ? 'even' : 'odd');
+    // create an array of the even numbers
+    let evenNumbersArray = array.filter(number => number % 2 === 0);
+    // create an array of the odd numbers
+    let oddNumbersArray = array.filter(number => number % 2 !== 0);
+    // sort the array of odd numbers, ascending
+    oddNumbersArray.sort((a, b) => a - b);
+    // return an array with even and odd numbers inserted in their positions
+
+    // assign indexes of the even and odd arrays to variables
+    let evenIndex = 0;
+    let oddIndex = 0;
+    // declare a variable for the number to map to our returning array each iteration
+    let numberToAdd;
+    // iterate over the array of positions, returning the mapped array
+    return positionsArray.map(function(type) {
+        // if the position is even, set the next even number to be mapped
+        if (type === 'even') {
+            numberToAdd = evenNumbersArray[evenIndex];
+            // increment the even index so the next even number is next
+            evenIndex++;
+        } else {
+            // if the position is odd, set the next odd number to be mapped
+            numberToAdd = oddNumbersArray[oddIndex];
+            // increment the odd index so the next odd number is next
+            oddIndex++;
+        };
+        // map the set number to the returning array
+        return numberToAdd;
+    });
+};
+
 */
