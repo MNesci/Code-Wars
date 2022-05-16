@@ -1211,4 +1211,29 @@ function sortArray(array) {
     });
 };
 
+
+//return the total number of smiling faces in the array
+function countSmileys(arr) {
+    // iterate over the array
+    return arr.reduce(function(count, face) {
+        // if length isn't 2 or 3, return count
+        if (face.length !== 2 && face.length !== 3) {
+            return count;
+        }
+        // if length is 2, the first character is eyes, and the last is smile, increase count
+        if ((face[0] === ':' || face[0] === ';') && (face.length === 2) &&
+                (face[face.length - 1] === ')' || face[face.length - 1] === 'D')) {
+                    console.log(face)
+            return count + 1;
+        // if length is 3, the first character is eyes, the second is nose,
+        // and the last is smile, increase count
+        } else if ((face[0] === ':' || face[0] === ';') && (face[1] === '-' || face[1] === '~') &&
+                (face[face.length - 1] === ')' || face[face.length - 1] === 'D')) {
+                    console.log(face)
+            return count + 1}
+        else {
+            return count;
+        };
+    }, 0);
+};
 */
