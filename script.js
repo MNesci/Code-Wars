@@ -1236,4 +1236,21 @@ function countSmileys(arr) {
         };
     }, 0);
 };
+
+function dirReduc(arr) {
+    // iterate over the array
+    for (let i = 0; i < arr.length; i++) {
+        // check if an element is opposite to the next element. if so, remove both
+        if ((arr[i] === 'NORTH' && arr[i+1] === 'SOUTH') ||
+                (arr[i] === 'SOUTH' && arr[i+1] === 'NORTH') ||
+                        (arr[i] === 'EAST' && arr[i+1] === 'WEST') ||
+                                (arr[i] === 'WEST' && arr[i+1] === 'EAST')) {
+                                    arr.splice(i, 2);
+                                    // reset i in case we brought opposites next to eachother
+                                    i = -1;
+                                };
+    };
+    return arr;
+};
+
 */
