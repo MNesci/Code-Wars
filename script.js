@@ -1253,4 +1253,22 @@ function dirReduc(arr) {
     return arr;
 };
 
+function points(games) {
+    // iterate over the array
+    return games.reduce(function(points, match) {
+        // assign variables to our team's score, and the other team's score
+        let x = Number(match[0]);
+        let y = Number(match[2]);
+        console.log(x, y);
+        // compare the scores
+        if (x > y) {
+            return points + 3;
+        } else if (x === y) {
+            return points + 1;
+        } else {
+            return points;
+        };
+    }, 0);
+};
+
 */
