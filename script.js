@@ -1271,4 +1271,17 @@ function points(games) {
     }, 0);
 };
 
+function squareDigits(num) {
+    // create an array of digits
+    let arrayOfDigits = num.toString().split('');
+    // map the squares to a new array
+    let arrayOfSquares = arrayOfDigits.map(function(digit) {
+        return digit ** 2;
+    });
+    // concatenate the array and make it a number
+    return Number(arrayOfSquares.join(''));
+}
+
+let squareDigits = num => Number(num.toString().split('').map(digit => digit ** 2).join(''));
+
 */
