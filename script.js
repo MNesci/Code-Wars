@@ -1284,4 +1284,16 @@ function squareDigits(num) {
 
 let squareDigits = num => Number(num.toString().split('').map(digit => digit ** 2).join(''));
 
+
+function count(string) {
+    // create an object to return
+    let returnObject = {};
+    // iterate over each character of the string
+    string.split('').forEach(function(character) {
+        // if the character has been counted, increase count. otherwise, set it to 1
+        returnObject[character] ? returnObject[character]++ : returnObject[character] = 1;
+    });
+    return returnObject;
+};
+
 */
