@@ -1296,4 +1296,21 @@ function count(string) {
     return returnObject;
 };
 
+function solution(number) {
+    // return 0 if the number is negative
+    if(number < 0) {
+        return 0;
+    };
+    // set a variable for our sum
+    let sum = 0;
+    // iterate over all numbers below the number, adding mulitples of 3 or 5
+    for (let i = 1; i < number; i++) {
+        if(i % 3 === 0 || i % 5 === 0) {
+            sum += i;
+        };
+    };
+    // return the sum
+    return sum;
+};
+
 */
