@@ -1313,4 +1313,17 @@ function solution(number) {
     return sum;
 };
 
+function persistence(num) {
+    // assign a variable for the number of times we will iterate
+    let count = 0;
+    // iterate until the number is only 1 digit
+    while (num.toString().length !== 1) {
+        // multiply each digit by eachother
+        num = num.toString().split('').reduce((product, digit) => Number(digit)*product, 1)
+        // increase the count by 1
+        count++;
+    };
+    return count;
+};
+
 */
