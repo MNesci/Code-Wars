@@ -1326,4 +1326,10 @@ function persistence(num) {
     return count;
 };
 
+function descendingOrder(n) {
+    // convert the number to a string, array, sort descending,
+    //back to a string, and back to a number
+    return Number(n.toString().split('').sort((a, b) => b - a).join(''))
+};
+
 */
