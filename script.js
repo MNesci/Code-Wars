@@ -1332,4 +1332,14 @@ function descendingOrder(n) {
     return Number(n.toString().split('').sort((a, b) => b - a).join(''))
 };
 
+function sumTwoSmallestNumbers(numbers) {
+    // iterate over the array to find the lowest positive integer
+    let lowestInt = numbers.reduce((lowest, current) => lowest < current ? lowest : current, Infinity);
+    // remove the lowest int from the array
+    numbers.splice(numbers.indexOf(lowestInt), 1);
+    // iterate over the array to find the second lowest positive integer
+    let secondLowestInt = numbers.reduce((lowest, current) => lowest < current ? lowest : current, Infinity);
+    return lowestInt + secondLowestInt;
+};
+
 */
