@@ -1342,4 +1342,32 @@ function sumTwoSmallestNumbers(numbers) {
     return lowestInt + secondLowestInt;
 };
 
+function runLengthEncoding(str) {
+    // create an object to hold our arrays
+    let objectOfArrays = {};
+    // assign a variable to track how many consecutive characters you are at
+    let streak = 0;
+    // iterate over the string
+    for (let i = 0; i < str.length; i++) {
+        // if the first character, or different from previous character
+        if (i === 0 || str[i] !== str[i - 1]) {
+            // make a new property and set the count of  the character to 1
+            objectOfArrays[i] = [1, str[i]];
+            // set streak to 0
+            streak = 0;
+        } else {
+            // increment streak
+            streak++;
+            // increase the matching array's count by 1
+            objectOfArrays[i - streak][0]++;
+        };
+    };
+    // iterate over the objects arrays, pushing to an array that is returned
+    let arrayToReturn = [];
+    for (key in objectOfArrays) {
+        arrayToReturn.push(objectOfArrays[key]);
+    };
+    return arrayToReturn;
+};
+
 */
