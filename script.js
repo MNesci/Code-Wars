@@ -1370,4 +1370,16 @@ function runLengthEncoding(str) {
     return arrayToReturn;
 };
 
+function minSum(arr) {
+    // sort the array from smallest to largest
+    arr.sort((a, b) => a - b);
+    // create an array of products of integers that are as far apart as possible
+    let arrayOfProducts = [];
+    for (let i = 0; i < arr.length/2; i++) {
+        arrayOfProducts.push(arr[i]*arr[arr.length-i-1]);
+    };
+    // sum the products
+    return arrayOfProducts.reduce((sum, product) => sum + product, 0);
+};
+
 */
