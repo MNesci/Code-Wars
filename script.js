@@ -1382,4 +1382,27 @@ function minSum(arr) {
     return arrayOfProducts.reduce((sum, product) => sum + product, 0);
 };
 
+function missingNo(nums) {
+    // assign a variable to hold the missing number
+    let numberToReturn;
+    for (let i = 0; i <= 100; i++) {
+        if (!nums.includes(i)) {
+            numberToReturn = i;
+        };
+    };
+    return numberToReturn;
+};
+
+function incrementer(nums) {
+    if (nums.length === 0) {
+        return [];
+    };
+    console.log(nums);
+    // increment numbers
+    let incrementedNumbers = nums.map((number, index) => number+index+1);
+    console.log(incrementedNumbers);
+    // if number is one digit, map it to next array. otherwise, map the last digit
+    return incrementedNumbers.map((number) => number.toString().length > 1 ? Number(number.toString()[number.toString().length - 1]) : number);
+};
+
 */
