@@ -1405,4 +1405,26 @@ function incrementer(nums) {
     return incrementedNumbers.map((number) => number.toString().length > 1 ? Number(number.toString()[number.toString().length - 1]) : number);
 };
 
+function duplicates(array) {
+    // assign a variable for the count of pairs
+    let count = 0;
+    // iterate over the array
+    for (let i = 0; i < array.length; i++) {
+        // assign a variable for the current value
+        let value = array[i];
+        // remove the value from the array
+        array.splice(i, 1);
+        // decrement i to not skip elements
+        i--;
+        // check if there is another element with that value
+        if (array.indexOf(value) > -1) {
+            // increment count
+            count++;
+            // remove the element so it isn't checked
+            array.splice(array.indexOf(value), 1);
+        };
+    };
+    return count;
+};
+
 */
