@@ -1427,4 +1427,16 @@ function duplicates(array) {
     return count;
 };
 
+function mygcd(x, y) {
+    // determine which number is lesser
+    let lesserNumber = x < y ? x : y;
+    // iterate over positive numbers equal to or less than the lesser number
+    for (let i = lesserNumber; i > 0; i--) {
+        // check if i is a common denominator
+        if (x % i == 0 && y % i == 0) {
+            return i;
+        };
+    };
+};
+
 */
