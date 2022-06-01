@@ -1439,4 +1439,22 @@ function mygcd(x, y) {
     };
 };
 
+function movie(card, ticket, perc) {
+    // define the starting price for each payment method
+    let systemA = 0;
+    let systemB = card;
+    // assign a variable for the previous price paid for a ticket through systemB
+    let previousPrice = ticket;
+    // assign a variable to count how many iterations have occurred
+    let count = 0;
+    // iterate until systemB is cheaper than systemA
+    while (systemA <= Math.ceil(systemB)) {
+        systemA += ticket;
+        systemB += previousPrice * perc;
+        count++;
+        previousPrice *= perc;
+    };
+    return count;
+};
+
 */
