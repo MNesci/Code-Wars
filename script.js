@@ -1457,4 +1457,53 @@ function movie(card, ticket, perc) {
     return count;
 };
 
+function domainName(url) {
+    console.log(url);
+    // assign a variable for each string to remove
+    let obj = {};
+    obj.https = /https:/g;
+    obj.http = /http:/g;
+    obj.www = /www\./g;
+    obj.com = /\.com/g;
+    obj.org = /\.org/g;
+    obj.ca = /\.ca/g;
+    obj.co = /\.co/g;
+    obj.jp = /\.jp/g;
+    obj.ru = /\.ru/g;
+    obj.net = /\.net/g;
+    obj.biz = /\.biz/g;
+    obj.it = /\.it/g;
+    obj.tv = /\.tv/g;
+    obj.php = /\.php/g;
+    obj.index = /index/g;
+    obj.img = /img/g;
+    obj.users = /users/g;
+    obj.info = /\.info/g;
+    obj.html = /\.html/g;
+    obj.edu = /\.edu/g;
+    obj.default = /default/g;
+    obj.slash = /\//g;
+    obj.br = /\.br/g;
+    obj.de = /\.de/g;
+    obj.pro = /\.pro/g;
+    obj.za = /\.za/g;
+    obj.fr = /\.fr/g;
+    obj.io = /\.io/g;
+    obj.archive = /archive/g;
+    obj.error = /error/g;
+    obj.us = /\.us/g;
+    obj.name = /\.name/g;
+    obj.warez = /warez/g;
+    obj.kata = /kata/g;
+    obj.uk = /\.uk/g;
+
+    // assign a variable for the string to return
+    let stringToReturn = url;
+    //iterate over the variables, replacing each with a blank string
+    for (let key in obj) {
+        stringToReturn = stringToReturn.replace(obj[key], '')
+    };
+    return stringToReturn;
+};
+
 */
