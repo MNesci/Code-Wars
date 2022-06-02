@@ -1506,4 +1506,26 @@ function domainName(url) {
     return stringToReturn;
 };
 
+function uniqueInOrder(iterable) {
+    let array;
+    if (!Array.isArray(iterable)) {
+        // convert the string to an array of characters
+        array = iterable.split('');
+    } else {
+        array = iterable;
+    };
+    
+    // iterate over the array
+    for (let i = 0; i < array.length; i++) {
+        // if the current element is a duplicate of the previous element
+        if (array[i] === array[i - 1]) {
+            // remove the current element
+            array.splice(i, 1);
+            // decrement to avoid skipping elements
+            i--;
+        };
+    };
+    return array;
+};
+
 */
