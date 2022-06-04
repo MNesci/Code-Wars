@@ -1528,4 +1528,11 @@ function uniqueInOrder(iterable) {
     return array;
 };
 
+function stray(numbers) {
+    // sort the array
+    numbers.sort((a, b) => a - b);
+    // return either the first or last element, whichever doesn't match the second element
+    return numbers[0] === numbers[1] ? numbers[numbers.length - 1] : numbers[0];
+};
+
 */
