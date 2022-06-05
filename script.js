@@ -1535,4 +1535,8 @@ function stray(numbers) {
     return numbers[0] === numbers[1] ? numbers[numbers.length - 1] : numbers[0];
 };
 
+function enough(cap, on, wait) {
+    return cap >= on + wait ? 0 : (on + wait) - cap;
+};
+
 */
