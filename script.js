@@ -1543,4 +1543,11 @@ function areaOrPerimeter(l, w) {
     return l === w ? l * w : l * 2 + w * 2;
 };
 
+function isPangram(string) {
+    // assign an array for all letters
+    let array = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+    // check if all letters are used
+    return array.every((letter) => string.toLowerCase().includes(letter));
+};
+
 */
