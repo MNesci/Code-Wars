@@ -1550,4 +1550,26 @@ function isPangram(string) {
     return array.every((letter) => string.toLowerCase().includes(letter));
 };
 
+function duplicateCount(text) {
+    // assign a variable for the count of letters with duplicates
+    let count = 0;
+    // convert the string to a lower case array and iterate over it
+    let array = text.toLowerCase().split('');
+    for (let i = 0; i < array.length; i++) {
+        // check if the there are duplicates
+        if (array.lastIndexOf(array[i]) !== i) {
+             // increment count of characters with duplicates
+            count++;
+            // remove all instances of the character
+            let character = array[i];
+            while (array.indexOf(character) !== -1) {
+                array.splice(array.indexOf(character), 1);
+            };
+            // decrement to avoid skipping
+            i--;
+        };
+    };
+    return count;
+};
+
 */
