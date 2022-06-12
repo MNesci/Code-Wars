@@ -1572,4 +1572,19 @@ function duplicateCount(text) {
     return count;
 };
 
+function getGrade (s1, s2, s3) {
+    let averageScore = (s1 + s2 + s3) / 3;
+    if (90 <= averageScore) {
+        return 'A';
+    } else if (80 <= averageScore) {
+        return 'B';
+    } else if (70 <= averageScore) {
+        return 'C';
+    } else if (60 <= averageScore) {
+        return 'D';
+    } else {
+        return 'F';
+    };
+};
+
 */
