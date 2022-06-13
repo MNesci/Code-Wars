@@ -1587,4 +1587,6 @@ function getGrade (s1, s2, s3) {
     };
 };
 
+let cockroachSpeed = (s) => Math.floor(s * 100000 / 3600);
+
 */
