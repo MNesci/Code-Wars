@@ -1593,4 +1593,23 @@ function abbrevName(name) {
     return name.split(' ').map((name) => name[0].toUpperCase()).join('.');
 };
 
+function isValidWalk(walk) {
+    // create an object with a count of each direction as a property
+    let directionsCount = {
+        n: 0,
+        s: 0,
+        w: 0,
+        e: 0,
+    };
+    // iterate over the array, incrementing each count when the direction appears
+    walk.forEach(walk => directionsCount[walk] += 1);
+    // return true if corresponding counts are equal, and the sum of counts is 10
+    directionsCount.total = directionsCount.n + directionsCount.s + directionsCount.w + directionsCount.e;
+    if (directionsCount.n === directionsCount.s && directionsCount.w === directionsCount.e && directionsCount.total === 10) {
+        return true;
+    } else {
+        return false;
+    };
+};
+
 */
