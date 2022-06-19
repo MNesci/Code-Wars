@@ -1612,4 +1612,11 @@ function isValidWalk(walk) {
     };
 };
 
+function getCount(str) {
+    // create a string of vowels
+    let vowels = 'aeiou';
+    // iterate over the string, counting vowels and returning the vowel count
+    return str.split('').reduce((count, letter) => vowels.includes(letter) ? count + 1 : count, 0);
+};
+
 */
