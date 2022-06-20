@@ -1644,4 +1644,9 @@ function greet(language) {
     return language in translationObject ? translationObject[language] : 'Welcome';
 };
 
+function countSheeps(arrayOfSheep) {
+    // iterate over the array, counting each value of true
+    return arrayOfSheep.reduce((count, element) => element === true ? count + 1 : count, 0);
+};
+
 */
