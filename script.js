@@ -1619,4 +1619,29 @@ function getCount(str) {
     return str.split('').reduce((count, letter) => vowels.includes(letter) ? count + 1 : count, 0);
 };
 
+function greet(language) {
+    // create an object of translations
+    let translationObject = {
+        english: 'Welcome',
+        czech: 'Vitejte',
+        danish: 'Velkomst',
+        dutch: 'Welkom',
+        estonian: 'Tere tulemast',
+        finnish: 'Tervetuloa',
+        flemish: 'Welgekomen',
+        french: 'Bienvenue',
+        german: 'Willkommen',
+        irish: 'Failte',
+        italian: 'Benvenuto',
+        latvian: 'Gaidits',
+        lithuanian: 'Laukiamas',
+        polish: 'Witamy',
+        spanish: 'Bienvenido',
+        swedish: 'Valkommen',
+        welsh: 'Croeso',
+    };
+    // check if language is in the object, returning the appropriate string
+    return language in translationObject ? translationObject[language] : 'Welcome';
+};
+
 */
