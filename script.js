@@ -1649,4 +1649,9 @@ function countSheeps(arrayOfSheep) {
     return arrayOfSheep.reduce((count, element) => element === true ? count + 1 : count, 0);
 };
 
+function past(h, m, s) {
+    // convert each unit to milliseconds and sum them
+    return h * 3600000 + m * 60000 + s * 1000;
+};
+
 */
