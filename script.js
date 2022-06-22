@@ -1654,4 +1654,9 @@ function past(h, m, s) {
     return h * 3600000 + m * 60000 + s * 1000;
 };
 
+function removeEveryOther(arr) {
+    // iterate over the array, keeping only elements with an even index
+    return arr.filter((element, index) => index % 2 === 0);
+};
+
 */
