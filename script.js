@@ -1659,4 +1659,21 @@ function removeEveryOther(arr) {
     return arr.filter((element, index) => index % 2 === 0);
 };
 
+function solution(string) {
+    // create a capital letter regex to search for
+    let capitalRegex = /[A-Z]/g;
+    // create an array of matches
+    let matches = [...string.matchAll(capitalRegex)];
+    // create an array of the match indexes
+    let indexes = matches.map((match) => match.index);
+    // sort the indexes from last to first
+    indexes.sort((a, b) => b - a);
+    // create an array of the string's characters
+    let arrayOfCharacters = string.split('');
+    // iterate over the indexes, inserting a space before them
+    indexes.forEach((index) => arrayOfCharacters.splice(index, 0, ' '));
+    // rejoin the characters
+    return arrayOfCharacters.join('');
+}
+
 */
