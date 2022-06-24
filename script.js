@@ -1674,6 +1674,27 @@ function solution(string) {
     indexes.forEach((index) => arrayOfCharacters.splice(index, 0, ' '));
     // rejoin the characters
     return arrayOfCharacters.join('');
-}
+};
+
+function comp(a, b) {
+    // check if arguments are null
+    if (a == null || b == null) {
+        return false;
+    };
+    // sort both arrays from smallest to largest
+    a.sort((a, b) => a - b);
+    b.sort((a, b) => a - b);
+    // create a boolean to return
+    let booleanToReturn = true;
+    // iterate over the arrays
+    for (let i = 0; i < a.length; i++) {
+        // check if the element in b is the square of the element in a
+        if (b[i] !== a[i] * a[i]) {
+            // if not, boolean to return becomes false
+            booleanToReturn = false;
+        };
+    };
+    return booleanToReturn;
+};
 
 */
