@@ -1697,4 +1697,30 @@ function comp(a, b) {
     return booleanToReturn;
 };
 
+function incrementString(string) {
+    // convert the string to an array
+    let arrayOfCharacters = string.split('');
+    // iterate over the array, counting how many characters on the end are numbers
+    let digitCount = arrayOfCharacters.reduce((count, character) => 
+            Number.isInteger(Number(character)) ? count + 1 : count, 0);
+    // if there is no number, add a 0 to the end
+    if (digitCount === 0) {
+        arrayOfCharacters.push('0');
+    };
+    // separate the string into the word portion and the number portion
+    let wordPortion = arrayOfCharacters.join('').slice(0, string.length - digitCount);
+    let numberPortion = arrayOfCharacters.join('').slice(string.length - digitCount);
+    // increment the last number portion
+    numberPortion = Number(numberPortion) + 1
+    // check if 0s were lost
+    let differenceInNumberOfDigits = digitCount - numberPortion.toString().length;
+    console.log(differenceInNumberOfDigits)
+    // concatenate lost 0s back on to the number portion
+    if (differenceInNumberOfDigits > 0) {
+        numberPortion = '0'.repeat(differenceInNumberOfDigits) + numberPortion;
+    };
+    // concatenate the two portions
+    return `${wordPortion}${numberPortion}`;
+};
+
 */
