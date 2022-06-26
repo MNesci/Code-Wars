@@ -1723,4 +1723,8 @@ function incrementString(string) {
     return `${wordPortion}${numberPortion}`;
 };
 
+function checkForFactor (base, factor) {
+  return base % factor === 0;
+};
+
 */
