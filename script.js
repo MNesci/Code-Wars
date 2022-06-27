@@ -1727,4 +1727,12 @@ function checkForFactor (base, factor) {
   return base % factor === 0;
 };
 
+function powersOfTwo(n){
+  let arrayToReturn = [];
+  for (let i = 0; i <= n; i++) {
+    arrayToReturn.push(2 ** i);
+  };
+  return arrayToReturn;
+};
+
 */
