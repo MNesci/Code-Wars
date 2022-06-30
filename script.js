@@ -1759,4 +1759,8 @@ function wave(str){
   return arrayToReturn;
 };
 
+function testEven(n) {
+    return n % 2 === 0;
+};
+
 */
