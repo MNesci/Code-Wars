@@ -1741,4 +1741,22 @@ function gooseFilter (birds) {
   return birds.filter((bird) => !geese.includes(bird));
 };
 
+function wave(str){
+  // create an array to return
+  let arrayToReturn = [];
+  // iterate over the string
+  for (let i = 0; i < str.length; i++) {
+    // skip spaces
+    if (str[i] !== ' ') {
+      // create an array from the str
+      let stringArray = str.split('');
+      // capitalize the letter at i index
+      stringArray[i] = stringArray[i].toUpperCase();
+      // rejoin the string and add it to the array
+      arrayToReturn.push(stringArray.join(''));
+      };
+    };
+  return arrayToReturn;
+};
+
 */
