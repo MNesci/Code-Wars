@@ -1763,4 +1763,11 @@ function testEven(n) {
     return n % 2 === 0;
 };
 
+function strCount(str, letter){  
+  // create an array from the first string
+  let arrayOfCharacters = str.split('');
+  // iterate over the array, counting how many times the character matches the letter given
+  return arrayOfCharacters.reduce((count, character) => character === letter ? count + 1 : count, 0);
+};
+
 */
