@@ -1770,4 +1770,14 @@ function strCount(str, letter){
   return arrayOfCharacters.reduce((count, character) => character === letter ? count + 1 : count, 0);
 };
 
+const sequenceSum = (begin, end, step) => {
+  // create a variable to return
+  let sum = 0;
+  // iterate until all appropriate values have been summed
+  for (let i = begin; i <= end; i += step) {
+    sum += i;
+  };
+  return sum;
+};
+
 */
