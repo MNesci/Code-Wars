@@ -1780,4 +1780,16 @@ const sequenceSum = (begin, end, step) => {
   return sum;
 };
 
+function accum(s) {
+    // convert the string to an array
+    let arrayOfCharacters = s.split('');
+    // iterate over the array
+    for (let i = 0; i < arrayOfCharacters.length; i++) {
+        // convert each character to a string of characters: the first uppercase, followed by i lowercase characters
+        arrayOfCharacters[i] = arrayOfCharacters[i].toUpperCase() + arrayOfCharacters[i].toLowerCase().repeat(i);
+    };
+    // rejoin and return the string
+    return arrayOfCharacters.join('-');
+};
+
 */
