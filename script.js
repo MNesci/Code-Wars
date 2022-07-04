@@ -1792,4 +1792,18 @@ function accum(s) {
     return arrayOfCharacters.join('-');
 };
 
+function noSpace(x) {
+    // create an array for non-whitespace characters
+    let arrayOfCharacters = [];
+    // iterate over the string
+    for (let i = 0; i < x.length; i++) {
+        // if the character is not a space, push it to the array
+        if (x[i] !== ' ') {
+            arrayOfCharacters.push(x[i]);
+        };
+    };
+    // join and return the array
+    return arrayOfCharacters.join('');
+};
+
 */
