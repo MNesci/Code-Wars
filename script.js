@@ -1806,4 +1806,8 @@ function noSpace(x) {
     return arrayOfCharacters.join('');
 };
 
+function square(number) {
+  return number ** 2;
+};
+
 */
