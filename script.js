@@ -1810,4 +1810,8 @@ function square(number) {
   return number ** 2;
 };
 
+function repeatStr (n, s) {
+  return s.repeat(n);
+};
+
 */
