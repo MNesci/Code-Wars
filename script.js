@@ -1818,4 +1818,12 @@ function simpleMultiplication(number) {
     return number % 2 === 0 ? number * 8 : number * 9;   
 };
 
+const reverseSeq = n => {
+    let array = [];
+    for (let i = n; i >= 1; i--) {
+        array.push(i); 
+    };
+    return array;
+};
+
 */
