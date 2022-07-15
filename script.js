@@ -1901,4 +1901,9 @@ function arithmetic(a, b, operator){
   };
 };
 
+function doubleInteger(i) {
+  i *= 2;
+  return i;
+};
+
 */
