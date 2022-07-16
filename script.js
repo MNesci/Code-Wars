@@ -1906,4 +1906,11 @@ function doubleInteger(i) {
   return i;
 };
 
+class SmallestIntegerFinder {
+  findSmallestInt(args) {
+    args.sort((a, b) => a - b);
+    return args[0];
+  };
+};
+
 */
