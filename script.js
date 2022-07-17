@@ -1913,4 +1913,15 @@ class SmallestIntegerFinder {
   };
 };
 
+var min = function(list){
+    // iterate over the array
+    let lowToHighSort = list.sort((a, b) => a - b);
+    return lowToHighSort[0];
+};
+
+var max = function(list){
+    let highToLowSort = list.sort((a, b) => b - a);
+    return highToLowSort[0];
+};
+
 */
