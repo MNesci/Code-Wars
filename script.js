@@ -1924,4 +1924,8 @@ var max = function(list){
     return highToLowSort[0];
 };
 
+function sumStr(a,b) {
+    return (Number(a) + Number(b)).toString();
+};
+
 */
