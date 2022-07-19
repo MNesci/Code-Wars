@@ -1928,4 +1928,8 @@ function sumStr(a,b) {
     return (Number(a) + Number(b)).toString();
 };
 
+function even_or_odd(number) {
+    return number % 2 === 0 ? 'Even' : 'Odd';
+};
+
 */
