@@ -1932,4 +1932,22 @@ function even_or_odd(number) {
     return number % 2 === 0 ? 'Even' : 'Odd';
 };
 
+function nbDig(n, d) {
+    // create an array of squares
+    let arrayOfSquares = [];
+    for (let i = 0; i <= n; i++) {
+        arrayOfSquares.push(i ** 2);
+    };
+    // count each instance of d in the array of squares
+    return arrayOfSquares.reduce((count, square) => {
+        let occurencesOfDigitInSquare = 0;
+        for (let i = 0; i < square.toString().length; i++) {
+            if (square.toString()[i] == d) {
+                occurencesOfDigitInSquare++;
+            };
+        };
+        return count + occurencesOfDigitInSquare;
+    }, 0);
+};
+
 */
