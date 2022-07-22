@@ -1950,4 +1950,8 @@ function nbDig(n, d) {
     }, 0);
 };
 
+function grow(x){
+    return x.reduce((product, integer) => product * integer, 1);
+};
+
 */
