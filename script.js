@@ -2002,4 +2002,16 @@ function high(x){
     return highestScore.word;
 };
 
+function gimme(triplet) {
+    // iterate over the array, creating an object of values and indexes
+    let indexesByValue = triplet.reduce((object, value, index) => {
+        object[value] = index;
+        return object;
+    }, {});
+    // sort the array from smallest to largest
+    triplet.sort((a, b) => a - b);
+    // return the index of the second value
+    return indexesByValue[triplet[1]];
+};
+
 */
