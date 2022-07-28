@@ -2020,4 +2020,27 @@ function longest(s1, s2) {
     return arrayOfSortedCharacters.reduce((string, character) => string.includes(character) ? string : string + character);
 };
 
+function Automoton() {
+    this.states = ['q1', 'q2', 'q3'];
+};
+
+Automoton.prototype.readCommands = function(commands) {
+    // set currentState in case of subsequent tests
+    this.currentState = 'q1';
+    // iterate over the commands
+    commands.forEach((command) => {
+        if (this.currentState === 'q1' && command === '1') {
+            this.currentState = 'q2';
+        } else if (this.currentState === 'q2' && command === '0') {
+            this.currentState = 'q3';
+        } else if (this.currentState === 'q3') {
+            this.currentState = 'q2';
+        };
+    });
+    return this.currentState === 'q2';
+};
+
+let myAutomaton = new Automoton();
+
 */
+
