@@ -2014,4 +2014,10 @@ function gimme(triplet) {
     return indexesByValue[triplet[1]];
 };
 
+function longest(s1, s2) {
+    let combinedString = s1 + s2;
+    let arrayOfSortedCharacters = combinedString.split('').sort((a, b) => a.localeCompare(b));
+    return arrayOfSortedCharacters.reduce((string, character) => string.includes(character) ? string : string + character);
+};
+
 */
