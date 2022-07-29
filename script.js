@@ -2042,5 +2042,12 @@ Automoton.prototype.readCommands = function(commands) {
 
 let myAutomaton = new Automoton();
 
+function spinWords(string) {
+    let arrayOfWords = string.split(' ');
+    return arrayOfWords.reduce((newArray, word, index, array) => {
+        return (word.length < 5) ? newArray.concat(word) : newArray.concat(word.split('').reverse().join(''));
+    }, []).join(' ');
+};
+
 */
 
