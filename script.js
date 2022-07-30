@@ -2049,5 +2049,14 @@ function spinWords(string) {
     }, []).join(' ');
 };
 
-*/
+function digital_root(n) {
+    let x = n;
+    while (x.toString().length > 1) {
+        x = x.toString().split('').reduce((sum, digit) => {
+            return sum + Number(digit);
+        }, 0);
+    };
+    return x;
+};
 
+*/
