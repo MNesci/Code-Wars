@@ -2063,4 +2063,50 @@ function bonusTime(salary, bonus) {
     return bonus ? `\u00A3${salary * 10}` : `\u00A3${salary}`;
 };
 
+function rot13(message){
+    const cipherKey = {
+        a: 'n',
+        b: 'o',
+        c: 'p',
+        d: 'q',
+        e: 'r',
+        f: 's',
+        g: 't',
+        h: 'u',
+        i: 'v',
+        j: 'w',
+        k: 'x',
+        l: 'y',
+        m: 'z',
+        n: 'a',
+        o: 'b',
+        p: 'c',
+        q: 'd',
+        r: 'e',
+        s: 'f',
+        t: 'g',
+        u: 'h',
+        v: 'i',
+        w: 'j',
+        x: 'k',
+        y: 'l',
+        z: 'm',
+    };
+    let arrayOfCodedCharacters = message.split('');
+    let arrayOfDecodedCharacters = arrayOfCodedCharacters.map((character) => {
+        // check if not letter
+        if (!(character.toLowerCase() in cipherKey)) {
+            console.log('not a leter')
+            return character;
+        };
+        // check if capital letter
+        if (!(character in cipherKey)) {
+            return cipherKey[character.toLowerCase()].toUpperCase();
+        };
+        // otherwise, lowercase letter
+        return cipherKey[character];
+    });
+    return arrayOfDecodedCharacters.join('');
+};
+
 */
