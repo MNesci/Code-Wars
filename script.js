@@ -2109,4 +2109,18 @@ function rot13(message){
     return arrayOfDecodedCharacters.join('');
 };
 
+function towerBuilder(nFloors) {
+    let towerWidth = nFloors * 2 - 1;
+    let towerArray = [];
+    let block = '*'
+    for (let i = 1; i <= nFloors; i++) {
+        let blockLine = '*'.repeat(i * 2 - 1);
+        let spaceLength = (towerWidth - (i * 2 - 1)) / 2;
+        let space = ' '.repeat(spaceLength);
+        let floor = `${space}${blockLine}${space}`;
+        towerArray.push(floor);
+    };
+    return towerArray;
+};
+
 */
