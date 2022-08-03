@@ -2123,4 +2123,8 @@ function towerBuilder(nFloors) {
     return towerArray;
 };
 
+function check(a, x) {
+    return a.includes(x);
+};
+
 */
