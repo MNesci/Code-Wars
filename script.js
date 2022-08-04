@@ -2127,4 +2127,26 @@ function check(a, x) {
     return a.includes(x);
 };
 
+function duplicateEncode(word) {
+    let arrayOfCharacters = word.toLowerCase().split('');
+    let stringToUpdate = word.toLowerCase();
+    console.log(word)
+    arrayOfCharacters.forEach((letter) => {
+        let count = arrayOfCharacters.reduce((total, character) => {
+            if (character === letter) {
+                return total + 1;
+            };
+            return total;
+        }, 0);
+        console.log(letter)
+        console.log(count)
+        if (count > 1) {
+            stringToUpdate = stringToUpdate.replace(letter, ')');
+        } else {
+            stringToUpdate = stringToUpdate.replace(letter, '(');
+        };
+    });
+    return stringToUpdate;
+};
+
 */
