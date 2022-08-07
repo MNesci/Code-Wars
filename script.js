@@ -2157,4 +2157,20 @@ function createPhoneNumber(numbers){
     return `(${numbers[0]}${numbers[1]}${numbers[2]}) ${numbers[3]}${numbers[4]}${numbers[5]}-${numbers[6]}${numbers[7]}${numbers[8]}${numbers[9]}`;
 };
 
+function bouncingBall(h, bounce, window) {
+    if ((h <= 0) || (bounce >= 1) || (bounce <= 0) || (window >= h)) {
+        return -1;
+    };
+    let currentHeight = h;
+    let timesSeen = 0;
+    while (currentHeight > window) {
+        timesSeen++;
+        currentHeight *= bounce;
+        if (currentHeight > window) {
+            timesSeen++;
+        };
+    };
+    return timesSeen;
+};
+
 */
