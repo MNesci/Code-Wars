@@ -2173,4 +2173,13 @@ function bouncingBall(h, bounce, window) {
     return timesSeen;
 };
 
+function sumDigits(number) {
+    if (number < 0) {
+        number *= -1;    
+    };
+    let arrayOfDigits = number.toString().split('');
+    return arrayOfDigits.reduce((sum, digit) => sum + Number(digit), 0);
+};
+
+
 */
