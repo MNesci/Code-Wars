@@ -2181,5 +2181,19 @@ function sumDigits(number) {
     return arrayOfDigits.reduce((sum, digit) => sum + Number(digit), 0);
 };
 
+function pipeFix(numbers){
+    let min = numbers.reduce((lowest, number) => {
+        return number < lowest ? number : lowest; 
+    }, Infinity);
+    let max = numbers.reduce((highest, number) => {
+        return number > highest ? number : highest;
+    }, -Infinity);
+    let arrayToReturn = [];
+    for (let i = min; i <= max; i++) {
+        arrayToReturn.push(i);
+    };   
+    return arrayToReturn;
+};
+
 
 */
