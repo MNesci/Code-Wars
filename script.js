@@ -2195,5 +2195,16 @@ function pipeFix(numbers){
     return arrayToReturn;
 };
 
+function isPalindrome(x) {
+    let lowerCaseString = x.toLowerCase();
+    let palindrome = true;
+    for (let i = 0; i < lowerCaseString.length; i++) {
+        if (lowerCaseString[i] !== lowerCaseString[lowerCaseString.length - i - 1]) {
+            palindrome = false;
+        };
+    };
+    return palindrome;
+};
+
 
 */
