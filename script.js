@@ -2206,5 +2206,8 @@ function isPalindrome(x) {
     return palindrome;
 };
 
+var number=function(array){
+    return array.map((string, index) => `${index + 1}: ${string}`);
+};
 
 */
