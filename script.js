@@ -2210,4 +2210,8 @@ var number=function(array){
     return array.map((string, index) => `${index + 1}: ${string}`);
 };
 
+function makeUpperCase(str) {
+    return str.toUpperCase();
+};
+
 */
