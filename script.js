@@ -2214,4 +2214,8 @@ function makeUpperCase(str) {
     return str.toUpperCase();
 };
 
+function smash (words) {
+   return words.join(' ');
+};
+
 */
