@@ -2220,6 +2220,10 @@ function smash (words) {
 
 function getMiddle(s) {
     return s.length % 2 === 0 ? s.substring(s.length / 2 - 1, s.length / 2 + 1) : s.substring((s.length + 1) / 2 - 1, (s.length + 1) / 2);
-}
+};
+
+function getAge(inputString){
+    return Number(inputString[0]);
+};
 
 */
