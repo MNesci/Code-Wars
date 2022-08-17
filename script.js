@@ -2230,4 +2230,9 @@ function hoopCount (n) {
     return n > 9 ? "Great, now move on to tricks" : "Keep at it until you get it";    
 };
 
+function warnTheSheep(queue) {
+    let wolfIndex = queue.indexOf('wolf');
+    return wolfIndex === queue.length - 1 ? 'Pls go away and stop eating my sheep' : `Oi! Sheep number ${queue.length - wolfIndex - 1}! You are about to be eaten by a wolf!`
+};
+
 */
