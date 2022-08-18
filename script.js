@@ -2235,4 +2235,14 @@ function warnTheSheep(queue) {
     return wolfIndex === queue.length - 1 ? 'Pls go away and stop eating my sheep' : `Oi! Sheep number ${queue.length - wolfIndex - 1}! You are about to be eaten by a wolf!`
 };
 
+function findSum(n) {
+  let sum = 0;
+  for (let i = 1; i <= n; i++) {
+      if (i % 3 === 0 || i % 5 === 0) {
+          sum += i;
+      };
+  };
+  return sum;
+}
+
 */
