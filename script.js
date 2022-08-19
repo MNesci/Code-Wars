@@ -2236,13 +2236,26 @@ function warnTheSheep(queue) {
 };
 
 function findSum(n) {
-  let sum = 0;
-  for (let i = 1; i <= n; i++) {
-      if (i % 3 === 0 || i % 5 === 0) {
-          sum += i;
-      };
-  };
+    let sum = 0;
+    for (let i = 1; i <= n; i++) {
+        if (i % 3 === 0 || i % 5 === 0) {
+            sum += i;
+        };
+    };
   return sum;
-}
+};
+
+function findOutlier(integers) {
+    let arrayOfOddIntegers = [];
+    let arrayOfEvenIntegers = [];
+    for (let i = 0; i < integers.length; i++) {
+        if (integers[i] % 2 === 0) {
+            arrayOfEvenIntegers.push(integers[i]);
+        } else {
+            arrayOfOddIntegers.push(integers[i]);
+        };
+    };
+    return arrayOfEvenIntegers.length === 1 ? arrayOfEvenIntegers[0] : arrayOfOddIntegers[0];
+};
 
 */
