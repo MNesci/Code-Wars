@@ -2258,4 +2258,15 @@ function findOutlier(integers) {
     return arrayOfEvenIntegers.length === 1 ? arrayOfEvenIntegers[0] : arrayOfOddIntegers[0];
 };
 
+function toCamelCase(str){
+    let arrayOfCharacters = str.split('');
+    for (let i = 0; i < arrayOfCharacters.length; i++) {
+        if (arrayOfCharacters[i] === '_' || arrayOfCharacters[i] === '-') {
+            arrayOfCharacters.splice(i, 1);
+            arrayOfCharacters[i] = arrayOfCharacters[i].toUpperCase();
+        };
+    };
+    return arrayOfCharacters.join('');
+};
+
 */
