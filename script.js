@@ -2325,4 +2325,16 @@ const quarterOf = (month) => {
     };
 };
 
+String.prototype.toAlternatingCase = function () {
+    let arrayOfCharacters = this.split('');
+    let correctCaseArray = arrayOfCharacters.map((character) => {
+        if (character === character.toLowerCase()) {
+            return character.toUpperCase();
+        } else {
+          return character.toLowerCase();
+        };
+    });
+    return correctCaseArray.join('');
+};
+
 */
