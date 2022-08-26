@@ -2363,4 +2363,20 @@ function howMuchILoveYou(nbPetals) {
     };
 };
 
+function stockList(listOfArt, listOfCat){
+    // return empty string if either list is empty
+    if (listOfArt[0] === undefined || listOfCat[0] === undefined) {
+        return "";
+    };
+    // iterate over the list of categories
+    let arrayOfCategorySums = listOfCat.map(category => {
+        // iterate over list of books that match category
+        let categorySum = listOfArt.filter(art => art[0] === category).reduce((acc, art) => {
+            return acc + Number(art.split(' ')[1]);
+        }, 0);
+        return `(${category} : ${categorySum})`;
+    });
+    return arrayOfCategorySums.join(' - ');
+};
+
 */
