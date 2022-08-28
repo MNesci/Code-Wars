@@ -2379,4 +2379,15 @@ function stockList(listOfArt, listOfCat){
     return arrayOfCategorySums.join(' - ');
 };
 
+function findNextSquare(sq) {
+    if (Math.sqrt(sq) % 1 !== 0) {
+        return -1;
+    };
+    for (let i = sq + 1; i < Infinity; i++) {
+      if (Math.sqrt(i) % 1 === 0) {
+          return i;
+      };
+    };
+};
+
 */
