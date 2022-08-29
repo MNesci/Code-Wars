@@ -2394,4 +2394,20 @@ function isDivisible(n, x, y) {
     return n % x === 0 && n % y === 0;
 };
 
+function twiceAsOld(dadYearsOld, sonYearsOld) {
+    let ageDifference = dadYearsOld - sonYearsOld;
+    let sonAgeWhenHalf = 0;
+    for (let i = 0; i < 1000; i++) {
+        if (ageDifference === i * 2) {
+            sonAgeWhenHalf = i;
+        };
+        ageDifference++;
+    };
+    if (sonAgeWhenHalf > sonYearsOld) {
+        return sonAgeWhenHalf - sonYearsOld;
+    } else {
+        return sonYearsOld - sonAgeWhenHalf;
+    };
+};
+
 */
