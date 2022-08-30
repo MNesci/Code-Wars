@@ -2410,4 +2410,8 @@ function twiceAsOld(dadYearsOld, sonYearsOld) {
     };
 };
 
+function greet() {
+    return 'hello world!';
+};
+
 */
