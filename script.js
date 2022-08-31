@@ -2414,4 +2414,23 @@ function greet() {
     return 'hello world!';
 };
 
+function longestConsec(strarr, k) {
+    // iterate over the array, returning the longest string of k concatenated strings
+    return strarr.reduce((concatenation, string, index) => {
+        // assign a variable to the set of concatenated strings
+        let newConcatenation = '';
+        // concatenate k strings
+        for (let i = 0; i < k; i++) {
+            newConcatenation += strarr[index + i];
+        };
+        // if your concatenation exceeded the length of the array, set it to an empty string
+        if (newConcatenation.includes('undefined')) {
+            newConcatenation = '';
+        };
+        // if the concatenation is longer than the previous one, it is the current longest
+        return newConcatenation.length > concatenation.length ? newConcatenation : concatenation;
+    }, '');
+};
+
 */
+
