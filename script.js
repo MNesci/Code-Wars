@@ -2432,5 +2432,23 @@ function longestConsec(strarr, k) {
     }, '');
 };
 
+function listSquared(m, n) {
+    let arrayToReturn = [];
+    for (let i = m; i <= n; i++) {
+        let arrayOfDivisors = [];
+        for (let x = 1; x <= i; x++) {
+            if (i % x === 0) {
+                arrayOfDivisors.push(x);
+            };
+        };
+        let arrayOfSquaredDivisors = arrayOfDivisors.map((divisor) => divisor ** 2);
+        let sum = arrayOfSquaredDivisors.reduce((total, square) => total + square, 0);
+        if (Math.sqrt(sum) % 1 === 0) {
+            arrayToReturn.push([i, sum]);
+        };
+    };
+    return arrayToReturn;
+};
+
 */
 
