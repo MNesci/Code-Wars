@@ -2450,5 +2450,35 @@ function listSquared(m, n) {
     return arrayToReturn;
 };
 
+function titleCase(title, minorWords) {
+    // if empty string, return empty string
+    if (title === '' || undefined) {
+        return '';
+    };
+
+    // set minorWords to lowercase if it exists. otherwise, set it to an empty string
+    if (minorWords) {
+        minorWords = minorWords.toLowerCase();
+    } else {
+        minorWords = '';
+    };
+
+    // split words into an array and convert the entire string to lowercase
+    let arrayOfWords = title.toLowerCase().split(' ');
+
+    // convert subsequent words to title case unless listed in minorWords
+    for (let i = 0; i < arrayOfWords.length; i++) {
+        let currentWord = arrayOfWords[i];
+        // always convert the first letter of the first word to uppercase
+        // convert the first letter of subsequent words if not in minorWords
+        if ((i === 0) || !minorWords.split(' ').includes(currentWord)) {
+            let currentWordFirstCharacter = currentWord[0].toUpperCase();
+            let titleCaseCurrentWord = currentWordFirstCharacter + currentWord.substr(1, currentWord.length - 1);
+            arrayOfWords[i] = titleCaseCurrentWord;
+        };
+    };
+    return arrayOfWords.join(' ');
+};
+
 */
 
