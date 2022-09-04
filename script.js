@@ -2480,5 +2480,55 @@ function titleCase(title, minorWords) {
     return arrayOfWords.join(' ');
 };
 
+function encrypt(text, n) {
+    if (text === '' || text === null || n < 0) {
+        return text;
+    };
+    let currentText = text;
+    for (let i = 0; i < n; i++) {
+        let oddString = '';
+        let evenString = '';
+        for (let x = 0; x < currentText.length; x++) {
+            if (x % 2 === 0) {
+                evenString += currentText[x];
+            } else {
+                oddString += currentText[x];
+            };
+        };
+        currentText = oddString + evenString;
+    };
+    return currentText;
+};
+
+function decrypt(encryptedText, n) {
+    if (encryptedText === '' || encryptedText === null || n < 0) {
+        return encryptedText;
+    };
+    let currentText = encryptedText;
+    for (let i = 0; i < n; i++) {
+        let oddString = '';
+        let evenString = '';
+        if (currentText.length % 2 === 0) {
+            oddString = currentText.substr(0, currentText.length / 2);
+            evenString = currentText.substr(currentText.length / 2, currentText.length);
+        } else {
+            oddString = currentText.substr(0, (currentText.length - 1) / 2);
+            evenString = currentText.substr((currentText.length - 1) / 2, currentText.length);
+        };
+        let craftedString = '';
+        for (let x = 0; x < currentText.length; x++) {
+            if (x === 0) {
+                craftedString += evenString[x]; 
+            } else if (x % 2 === 0) {
+                craftedString += evenString[x / 2];
+            } else {
+                craftedString += oddString[(x - 1) / 2];
+            };
+        };
+        currentText = craftedString;
+    };
+    return currentText;
+};
+
 */
 
