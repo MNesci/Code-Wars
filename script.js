@@ -2530,5 +2530,14 @@ function decrypt(encryptedText, n) {
     return currentText;
 };
 
+function countPositivesSumNegatives(input) {
+    if (input === null || input.length === 0) {
+      return [];
+    };
+    let positiveCount = input.reduce((count, integer) => integer > 0 ? count + 1 : count, 0);
+    let negativeSum = input.reduce((sum, integer) => integer < 0 ? sum + integer : sum, 0);
+    return [positiveCount, negativeSum];
+};
+
 */
 
