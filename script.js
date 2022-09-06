@@ -2546,5 +2546,15 @@ function totalGoalsCalculator() {
     let totalGoals = laLigaGoals + championsLeagueGoals + copaDelReyGoals;
 };
 
+function capitals(word) {
+    let arrayOfCapitalIndexes = [];
+	  for (let i = 0; i < word.length; i++) {
+        if (word[i] === word[i].toUpperCase()) {
+            arrayOfCapitalIndexes.push(i);
+        };
+    };
+    return arrayOfCapitalIndexes;
+};
+
 */
 
