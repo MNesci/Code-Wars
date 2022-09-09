@@ -2576,5 +2576,10 @@ function summation(num) {
     return sum;
 };
 
+function betterThanAverage(classPoints, yourPoints) {
+    let average = (classPoints.reduce((sum, score) => sum + score, 0) + yourPoints) / (classPoints.length + 1);
+    return yourPoints > average;
+};
+
 */
 
