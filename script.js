@@ -2581,5 +2581,11 @@ function betterThanAverage(classPoints, yourPoints) {
     return yourPoints > average;
 };
 
+function reverse(string){
+    let arrayOfWords = string.split(' ');
+    arrayOfWords.reverse();
+    return arrayOfWords.join(' ');
+};
+
 */
 
