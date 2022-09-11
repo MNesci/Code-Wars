@@ -2587,5 +2587,14 @@ function reverse(string){
     return arrayOfWords.join(' ');
 };
 
+function dutyFree(normPrice, discount, hol){
+    let currencyDiscount = normPrice * discount / 100;
+    for (let i = 1; i < 1000000; i++) {
+        if (i * currencyDiscount > hol) {
+            return i - 1;
+        };
+    };
+};
+
 */
 
