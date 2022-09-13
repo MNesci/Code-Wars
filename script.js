@@ -2607,5 +2607,17 @@ function updateLight(current) {
     };
 };
 
+function shortcut (string) {
+    let lowerCaseVowels = 'aeiou';
+    let stringToReturn = '';
+    for (let i = 0; i < string.length; i++) {
+        let letter = string[i];
+        if (!lowerCaseVowels.includes(letter)) {
+            stringToReturn += letter;  
+        };
+    };
+    return stringToReturn;
+};
+
 */
 
