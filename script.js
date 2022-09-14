@@ -2619,5 +2619,9 @@ function shortcut (string) {
     return stringToReturn;
 };
 
+function xor(a, b) {
+    return (a === true && b === false) || (a === false && b === true);
+};
+
 */
 
