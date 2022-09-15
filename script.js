@@ -2623,5 +2623,17 @@ function xor(a, b) {
     return (a === true && b === false) || (a === false && b === true);
 };
 
+function order(words){
+    let arrayOfWords = words.split(' ');
+    let arrayOfKeyedWords = arrayOfWords.map((string) => {
+        return {
+            word: string,
+            number: string.split('').reduce((currentNumber, letter) => Number(letter) > 0 ? Number(letter) : currentNumber, 0)
+        };
+    });
+    arrayOfKeyedWords.sort((objectOne, objectTwo) => objectOne.number - objectTwo.number);
+    return arrayOfKeyedWords.map((object) => object.word).join(' ');
+};
+
 */
 
