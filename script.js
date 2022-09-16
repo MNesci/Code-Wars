@@ -2635,5 +2635,9 @@ function order(words){
     return arrayOfKeyedWords.map((object) => object.word).join(' ');
 };
 
+function shapeArea(n) {
+    return n ** 2 + (n - 1) ** 2;  
+};
+
 */
 
