@@ -2639,5 +2639,21 @@ function shapeArea(n) {
     return n ** 2 + (n - 1) ** 2;  
 };
 
+function zeroPlentiful(arr){
+    let sequenceCount = 0;
+    let currentSequenceLength = 0;
+    for (let i = 0; i < arr.length + 1; i++) {
+        if (arr[i] === 0) {
+            currentSequenceLength += 1;
+        } else if (currentSequenceLength > 3) {
+            sequenceCount += 1;
+            currentSequenceLength = 0;
+        } else if (currentSequenceLength > 0) {
+            return 0;
+        };
+    };
+    return sequenceCount;
+};
+
 */
 
