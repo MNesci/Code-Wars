@@ -2655,5 +2655,15 @@ function zeroPlentiful(arr){
     return sequenceCount;
 };
 
+function noBoringZeros(n) {
+    if (n === 0) {
+        return n;
+    };
+    while (n.toString()[n.toString().length - 1] === '0') {
+        n = n / 10;
+    };
+    return n;
+};
+
 */
 
