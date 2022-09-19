@@ -2665,5 +2665,18 @@ function noBoringZeros(n) {
     return n;
 };
 
+function narcissistic(value) {
+    let total = 0;
+    let numberOfDigits = value.toString().length;
+    let digitsRemaining = numberOfDigits;
+    while (digitsRemaining > 0) {
+        let digit = Number(value.toString()[digitsRemaining - 1]);
+        total += digit ** numberOfDigits;
+        digitsRemaining -= 1;
+    };
+    return total === value;
+};
+
+
 */
 
