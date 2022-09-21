@@ -2682,5 +2682,14 @@ function findUniq(arr) {
     return arr[0] === arr[1] ? arr[arr.length - 1] : arr[0];
 };
 
+function findNb(m) {
+    let n = 0;
+    while (m > 0) {
+        n += 1;
+        m -= n ** 3;
+    };
+    return m === 0 ? n : -1;
+};
+
 */
 
