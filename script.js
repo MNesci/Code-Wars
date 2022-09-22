@@ -2691,5 +2691,21 @@ function findNb(m) {
     return m === 0 ? n : -1;
 };
 
+function getParticipants(handshakes){
+    if (handshakes === 0) {
+        return 0;
+    };
+    let participants = 1;
+    let handshakesPossible = 0;
+    while (true) {
+        handshakesPossible += participants - 1;
+        if (handshakesPossible >= handshakes) {
+            break;
+        };
+        participants += 1;
+    };
+    return participants;
+};
+
 */
 
