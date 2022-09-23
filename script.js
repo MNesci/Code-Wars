@@ -2707,5 +2707,13 @@ function getParticipants(handshakes){
     return participants;
 };
 
-*/
+function maxSum(arr, range) {
+    // iterate over the ranges, returning the highest sum
+    return range.reduce((max, range) => {
+        let arrayInRange = arr.slice(range[0], range[1] + 1);
+        let arraySum = arrayInRange.reduce((sum, integer) => sum += integer, 0);
+        return arraySum > max ? arraySum : max;
+    }, -Infinity);
+};
 
+*/
