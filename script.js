@@ -2716,4 +2716,24 @@ function maxSum(arr, range) {
     }, -Infinity);
 };
 
+function findMissingLetter(array) {
+    let letters = 'abcdefghijklmnopqrstuvwxyz';
+    if (array[0] === array[0].toUpperCase()) {
+        arrayOfLetters = letters.split('');
+        for (let i = 0; i < arrayOfLetters.length; i++) {
+            arrayOfLetters[i] = arrayOfLetters[i].toUpperCase();
+        };
+        letters = arrayOfLetters.join('');
+    };
+    let indexOfMissingLetter;
+    for (let i = 0; i < array.length; i++) {
+        if (array[i + 1] === undefined) {
+            ;
+        } else if (letters.indexOf(array[i]) !== (letters.indexOf(array[i + 1]) - 1)) {
+            indexOfMissingLetter = letters.indexOf(array[i]) + 1;
+        };
+    };
+    return letters[indexOfMissingLetter];
+};
+
 */
