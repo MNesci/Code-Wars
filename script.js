@@ -2736,4 +2736,28 @@ function findMissingLetter(array) {
     return letters[indexOfMissingLetter];
 };
 
+function solution(s, t) {
+    let currentSpeed = s;
+    let timeRemaining = t;
+    let distanceCovered = 0;
+    let numberOfSprints = 0;
+    while (currentSpeed > s * 2 / 3 && timeRemaining > 0) {
+        // sprint
+        distanceCovered += currentSpeed * 2;
+        timeRemaining -= 1;
+        currentSpeed -= 1;
+        numberOfSprints += 1;
+        // recovery if we can sprint again
+        if (currentSpeed > s * 2 / 3 && timeRemaining > 1) {
+            distanceCovered += currentSpeed;
+            timeRemaining -= 1;
+        } else {
+            break;
+        };
+    };
+    // remaining
+    distanceCovered += s * timeRemaining;
+    return distanceCovered;
+};
+
 */
