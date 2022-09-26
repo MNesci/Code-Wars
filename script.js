@@ -2760,4 +2760,16 @@ function solution(s, t) {
     return distanceCovered;
 };
 
+function pyramidHeight(n) {
+    let cubesRemaining = n;
+    let height = 0;
+    for (let i = 1; i <= cubesRemaining; i++) {
+        if (Math.sqrt(i) % 1 === 0) {
+            height += 1;
+            cubesRemaining -= i;
+        };
+    };
+    return height;
+};
+
 */
