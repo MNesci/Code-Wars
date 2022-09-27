@@ -2772,4 +2772,21 @@ function pyramidHeight(n) {
     return height;
 };
 
+function computeDepth (x) {
+    // define variables for digits and depth
+    let digits = [];
+    let depth = 0;
+    // iterate until all digits have shown up
+    while (!digits.includes(0) || !digits.includes(1) || !digits.includes(2) || !digits.includes(3) ||
+                  !digits.includes(4) || !digits.includes(5) || !digits.includes(6) || !digits.includes(7) ||
+                          !digits.includes(8) || !digits.includes(9)) {
+        depth++;
+        let currentValue = (x * depth).toString();
+        for (let i = 0; i < currentValue.length; i++) {
+            digits.push(Number(currentValue[i]));
+        };
+    };
+    return depth;
+};
+
 */
