@@ -2834,5 +2834,20 @@ function permuteAPalindrome (input) {
     };
 };
 
+function grabscrab(anagram, dictionary) {
+    // create an array to hold matching words
+    let matchedWordsArray = [];
+    // alphabetize the anagram
+    let alphabetizedKey = Array.from(anagram).sort().join('');
+    // iterate over the passed array of words
+    for (let i = 0; i < dictionary.length; i++) {
+        let currentWord = dictionary[i];
+        let alphabetizedWord = Array.from(currentWord).sort().join('');
+        if (alphabetizedWord === alphabetizedKey) {
+            matchedWordsArray.push(currentWord);
+        };
+    };
+    return matchedWordsArray;
+};
 
 */
