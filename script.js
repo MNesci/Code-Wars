@@ -2850,4 +2850,18 @@ function grabscrab(anagram, dictionary) {
     return matchedWordsArray;
 };
 
+function comparePowers(n1,n2) {
+    console.log(n1, n2);
+    let firstValue = n1[0] ** n1[1];
+    let secondValue = n2[0] ** n2[1];
+    console.log(firstValue, secondValue);
+    if (firstValue > secondValue) {
+        return -1;
+    } else if (firstValue === secondValue) {
+        return 0;
+    } else {
+        return 1;
+    };
+};
+
 */
