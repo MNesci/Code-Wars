@@ -2864,4 +2864,25 @@ function comparePowers(n1,n2) {
     };
 };
 
+function mirror(text){
+    let arrayOfWords = text.split(' ');
+    let longestWordLength = arrayOfWords.reduce((length, word) => word.length > length ? word.length : length, 0);
+    let mirrorLength = longestWordLength + 4;
+    let arrayOfMirroredWords = [];
+    for (let i = 0; i < arrayOfWords.length; i++) {
+        let mirroredWord = '';
+        for (let x = 0; x < arrayOfWords[i].length; x++) {
+            mirroredWord = arrayOfWords[i][x] + mirroredWord;
+        };
+        mirroredWord = '* ' + mirroredWord;
+        let numberOfRightSpaces = mirrorLength - mirroredWord.length - 1;
+        let rightSpaces = ' '.repeat(numberOfRightSpaces);
+        mirroredWord = mirroredWord + rightSpaces + '*';
+        arrayOfMirroredWords.push(mirroredWord);
+    };
+    arrayOfMirroredWords.unshift('*'.repeat(mirrorLength));
+    arrayOfMirroredWords.push('*'.repeat(mirrorLength));
+    return arrayOfMirroredWords.join('\n');
+};
+
 */
