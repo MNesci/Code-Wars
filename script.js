@@ -2885,4 +2885,16 @@ function mirror(text){
     return arrayOfMirroredWords.join('\n');
 };
 
+multiplicationTable = function(size) {
+    let tableArray = [];
+    for (let x = 1; x <= size; x++) {
+        let currentRow = [];
+        for (let y = 1; y <= size; y++) {
+            currentRow = [...currentRow, x * y];
+        };
+        tableArray = [...tableArray, currentRow];
+    };
+    return tableArray;
+};
+
 */
