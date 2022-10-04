@@ -2901,4 +2901,14 @@ function fixTheMeerkat(arr) {
     return arr.reverse();
 };
 
+function findMultiples(integer, limit) {
+    let arrayOfIntegers = [];
+    for (let i = 1; i <= limit; i++) {
+        if (i % integer === 0) {
+            arrayOfIntegers.push(i);
+        };
+    };
+    return arrayOfIntegers;
+};
+
 */
