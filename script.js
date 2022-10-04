@@ -2897,4 +2897,8 @@ multiplicationTable = function(size) {
     return tableArray;
 };
 
+function fixTheMeerkat(arr) {
+    return arr.reverse();
+};
+
 */
