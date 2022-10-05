@@ -2911,4 +2911,27 @@ function findMultiples(integer, limit) {
     return arrayOfIntegers;
 };
 
+function solution(str){
+    // declare an array to hold character pairs
+    let characterPairsArray = [];
+    // declare an string for the current character pair
+    let currentCharacterPair = '';
+    // iterate over the string
+    for (let i = 0; i < str.length; i++) {
+        // add the character to the current pair
+        currentCharacterPair += str[i];
+        // if currentCharacterPair has 2 characters, add it to the array and reset it
+        if (currentCharacterPair.length > 1) {
+            characterPairsArray.push(currentCharacterPair);
+            currentCharacterPair = '';
+        };
+    };
+    // if there is a lone character in the current character pair string, add and underscore and add it to the array
+    if (currentCharacterPair.length === 1) {
+        currentCharacterPair += '_';
+        characterPairsArray.push(currentCharacterPair);
+    };
+    return characterPairsArray;
+};
+
 */
