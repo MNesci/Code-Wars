@@ -2934,4 +2934,10 @@ function solution(str){
     return characterPairsArray;
 };
 
+function estSubsets(arr) {
+    let uniqueSet = new Set(arr);
+    let numberOfUniqueElements = uniqueSet.size;
+    return 2 ** numberOfUniqueElements - 1
+};
+
 */
