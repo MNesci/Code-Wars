@@ -2940,4 +2940,52 @@ function estSubsets(arr) {
     return 2 ** numberOfUniqueElements - 1
 };
 
+function solve(s) {
+    // create an object with letter values
+    let letterValues = {
+        a: 1,
+        b: 2,
+        c: 3,
+        d: 4,
+        e: 5,
+        f: 6,
+        g: 7,
+        h: 8,
+        i: 9,
+        j: 10,
+        k: 11,
+        l: 12,
+        m: 13,
+        n: 14,
+        o: 15,
+        p: 16,
+        q: 17,
+        r: 18,
+        s: 19,
+        t: 20,
+        u: 21,
+        v: 22,
+        w: 23,
+        x: 24,
+        y: 25,
+        z: 26,
+    };
+  
+    // replace all vowels in the string with hyphens
+    let vowelRegexp = /[aeiou]/g
+    let hyphenatedString = s.replace(vowelRegexp, '-');
+    
+    // split the hyphenated string into an array of consonant substrings
+    let substringArray = hyphenatedString.split('-').filter(substring => substring !== '');
+    // iterate over the array, returning the highest substring value
+    return substringArray.reduce((highest, substring) => {
+        // iterate over the consonants in the substring, returning their value if it is higher than the current
+        let substringValue = 0;
+        for (let i = 0; i < substring.length; i++) {
+            substringValue += letterValues[substring[i]];
+        };
+        return substringValue > highest ? substringValue : highest;
+    }, 0)
+};
+
 */
