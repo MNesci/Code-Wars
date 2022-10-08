@@ -2988,4 +2988,11 @@ function solve(s) {
     }, 0)
 };
 
+function duplicateEncode(word) {
+    let stringToEncode = word.toLowerCase();
+    let arrayOfCharacters = stringToEncode.split('');
+    let encodedArray = arrayOfCharacters.map(character => arrayOfCharacters.indexOf(character) === arrayOfCharacters.lastIndexOf(character) ? '(' : ')');
+    return encodedArray.join('');
+};
+
 */
