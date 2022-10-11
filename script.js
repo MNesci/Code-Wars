@@ -3009,4 +3009,16 @@ function feast(beast, dish) {
     return beast[0] === dish[0] && beast[beast.length - 1] === dish[dish.length -1] ? true : false;
 };
 
+function dataReverse(data) {
+    if (data.length === 0) {
+        return [];
+    };
+    let dataString = data.join('');
+    let dataSegmentArray = dataString.match(/.{1,8}/g);
+    let reversedDataSegmentArray = dataSegmentArray.reverse();
+    let reversedDataString = reversedDataSegmentArray.join('');
+    let reversedData = reversedDataString.split('');
+    return reversedData.map((digit) => Number(digit));
+};
+
 */
