@@ -3021,4 +3021,24 @@ function dataReverse(data) {
     return reversedData.map((digit) => Number(digit));
 };
 
+function palindrome(string) {
+    let alphabet = 'abcdefghijklmnopqrstuvwxyz';
+    let filteredString = '';
+    for (let i = 0; i < string.length; i++) {
+        if (alphabet.indexOf(string[i].toLowerCase()) >= 0) {
+            filteredString += string[i].toLowerCase();
+        };
+    };
+    let isPalindrome = true;
+    for (let i = 0; i < filteredString.length; i++) {
+        let currentCharacter = filteredString[i];
+        let oppositeIndex = (filteredString.length - 1) - i;
+        let oppositeCharacter = filteredString[oppositeIndex];
+        if (currentCharacter !== oppositeCharacter) {
+            isPalindrome = false;
+        };
+    };
+    return isPalindrome;
+};
+
 */
