@@ -3041,4 +3041,19 @@ function palindrome(string) {
     return isPalindrome;
 };
 
+function reverse(str){
+    let trimmedString = str.trim();
+    let arrayOfWords = trimmedString.split(' ');
+    for (let i = 0; i < arrayOfWords.length; i++) {
+        if (i % 2 !== 0) {
+            let reversedWord = '';
+            for (let x = arrayOfWords[i].length - 1; x >= 0; x--) {
+                reversedWord += arrayOfWords[i][x];
+            };
+            arrayOfWords[i] = reversedWord;
+        };
+    };
+    return arrayOfWords.join(' ');
+};
+
 */
