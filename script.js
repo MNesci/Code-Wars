@@ -3056,4 +3056,143 @@ function reverse(str){
     return arrayOfWords.join(' ');
 };
 
+function menStillStanding(cards) {
+    let players = {
+        A1: {
+            card: '',
+            in: true,
+            team: 'A',
+        },
+        A2: {
+            card: '',
+            in: true,
+            team: 'A',
+        },
+        A3: {
+            card: '',
+            in: true,
+            team: 'A',
+        },
+        A4: {
+            card: '',
+            in: true,
+            team: 'A',
+        },
+        A5: {
+            card: '',
+            in: true,
+            team: 'A',
+        },
+        A6: {
+            card: '',
+            in: true,
+            team: 'A',
+        },
+        A7: {
+            card: '',
+            in: true,
+            team: 'A',
+        },
+        A8: {
+            card: '',
+            in: true,
+            team: 'A',
+        },
+        A9: {
+            card: '',
+            in: true,
+            team: 'A',
+        },
+        A10: {
+            card: '',
+            in: true,
+            team: 'A',
+        },
+        A11: {
+            card: '',
+            in: true,
+            team: 'A',
+        },
+        B1: {
+            card: '',
+            in: true,
+            team: 'B',
+        },
+        B2: {
+            card: '',
+            in: true,
+            team: 'B',
+        },
+        B3: {
+            card: '',
+            in: true,
+            team: 'B',
+        },
+        B4: {
+            card: '',
+            in: true,
+            team: 'B',
+        },
+        B5: {
+            card: '',
+            in: true,
+            team: 'B',
+        },
+        B6: {
+            card: '',
+            in: true,
+            team: 'B',
+        },
+        B7: {
+            card: '',
+            in: true,
+            team: 'B',
+        },
+        B8: {
+            card: '',
+            in: true,
+            team: 'B',
+        },
+        B9: {
+            card: '',
+            in: true,
+            team: 'B',
+        },
+        B10: {
+            card: '',
+            in: true,
+            team: 'B',
+        },
+        B11: {
+            card: '',
+            in: true,
+            team: 'B',
+        },
+    };
+    let counts = {
+        A: 11,
+        B: 11,
+    };
+    for (let refCard of cards) {
+        let player = refCard[0] + refCard.substr(1, refCard.length - 2);
+        let color = refCard[refCard.length - 1];
+        let team = refCard[0];
+        if (!players[player].in) {
+            continue;
+        } else if (color === players[player].card) {
+            players[player].in = false;
+            counts[team] -= 1;
+        } else if (color === 'Y') {
+            players[player].card = color;
+        } else if (color === 'R') {
+            players[player].in = false;
+            counts[team] -= 1;
+        };
+        if (counts.A < 7 || counts.B < 7) {
+            break;
+        };
+    };
+    return [counts.A, counts.B];
+};
+
 */
