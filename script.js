@@ -3213,4 +3213,8 @@ function problem(x){
     return typeof x === 'string' ? 'Error' : x * 50 + 6;
 };
 
+function move (position, roll) {
+    return position + roll * 2;
+};
+
 */
