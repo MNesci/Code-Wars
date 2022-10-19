@@ -3258,4 +3258,28 @@ function decrypt(encryption) {
     return decryption;
 };
 
+function ascendDescend(length, minimum, maximum) {
+    let string = '';
+    let currentNumber = minimum;
+    let ascending = true;
+    if (maximum < minimum || length === 0) {
+        return '';
+    };
+    while (string.length < length) {
+        string += currentNumber;
+        if (currentNumber < maximum && ascending) {
+            currentNumber++;
+        } else if (currentNumber > minimum && !ascending) {
+            currentNumber--;
+        };
+
+        if (currentNumber === maximum) {
+            ascending = false;
+        } else if (currentNumber === minimum) {
+            ascending = true;
+        };
+    };
+    return string.substring(0, length);
+};
+
 */
