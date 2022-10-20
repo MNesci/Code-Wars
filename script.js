@@ -3282,4 +3282,20 @@ function ascendDescend(length, minimum, maximum) {
     return string.substring(0, length);
 };
 
+function isValidIP(str) {
+    let valid = true;
+    let octets = str.split('');
+    if (octets.length !== 4) {
+        valid = false;
+    };
+    for (let octet of octets) {
+        if (!String(Number(octet)) === octet) {
+            valid = false;
+        } else if (Number(octet) < 0 || Number(octet) > 255) {
+            valid = false;
+        };
+    };
+    return valid;
+};
+
 */
