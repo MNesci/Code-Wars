@@ -3298,4 +3298,17 @@ function isValidIP(str) {
     return valid;
 };
 
+String.prototype.camelCase = function() {
+    if (this.substr(0, this.length) === '') {
+        return '';
+    };
+    let arrayOfWords = this.trim().split(' ');
+    for (let i = 0; i < arrayOfWords.length; i++) {
+        let word = arrayOfWords[i];
+        let capitalizedWord = word[0].toUpperCase() + word.substr(1, word.length - 1);
+        arrayOfWords[i] = capitalizedWord;
+    };
+    return arrayOfWords.join('');
+};
+
 */
