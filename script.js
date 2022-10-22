@@ -3311,4 +3311,21 @@ String.prototype.camelCase = function() {
     return arrayOfWords.join('');
 };
 
+function toWeirdCase(string) {
+    let arrayOfWords = string.toLowerCase().split(' ');
+    for (let x = 0; x < arrayOfWords.length; x++) {
+        let oldWord = arrayOfWords[x];
+        let newWord = '';
+        for (let y = 0; y < oldWord.length; y++) {
+            if (y % 2 === 0) {
+                newWord += oldWord[y].toUpperCase();              
+            } else {
+                newWord += oldWord[y];
+            };
+        };
+        arrayOfWords[x] = newWord;
+    };
+    return arrayOfWords.join(' ');
+};
+
 */
