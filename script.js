@@ -3341,4 +3341,8 @@ function inArray(array1,array2){
     return arrayToReturn.sort();
 };
 
+function boolToWord(bool) {
+    return bool ? 'Yes' : 'No';
+};
+
 */
