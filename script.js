@@ -3345,4 +3345,40 @@ function boolToWord(bool) {
     return bool ? 'Yes' : 'No';
 };
 
+function goodVsEvil(good, evil){
+    let goodArray = good.split(' ');
+    let goodWorthObject = {
+        0: 1,
+        1: 2,
+        2: 3,
+        3: 3,
+        4: 4,
+        5: 10,
+    };
+    let goodWorth = goodArray.reduce((worth, count, race) => {
+        return worth + count * goodWorthObject[race];
+    }, 0);
+    let evilArray = evil.split(' ');
+    let evilWorthObject = {
+        0: 1,
+        1: 2,
+        2: 2,
+        3: 2,
+        4: 3,
+        5: 5,
+        6: 10,
+    };
+    let evilWorth = evilArray.reduce((worth, count, race) => {
+        return worth + count * evilWorthObject[race];
+    }, 0);
+    if (goodWorth > evilWorth) {
+        return 'Battle Result: Good triumphs over Evil';
+    } else if (evilWorth > goodWorth) {
+        return 'Battle Result: Evil eradicates all trace of Good';
+    } else {
+        return 'Battle Result: No victor on this battle field';
+    };
+};
+
+
 */
