@@ -3388,4 +3388,47 @@ Ship.prototype.isWorthIt = function() {
     return this.draft - this.crew * 1.5 > 20;
 };
 
+function tripledouble(num1, num2) {
+    let currentNumber1;
+    let previousNumber1;
+    let currentNumber2;
+    let previousNumber2;
+    let streak1 = 1;
+    let streak2 = 1;
+    let tripleNumbersArray = [];
+    let doubleNumbersArray = [];
+    let string1 = num1.toString();
+    let string2 = num2.toString();
+    for (let i = 0; i < string1.length; i++) {
+        currentNumber1 = string1[i];
+        if (currentNumber1 === previousNumber1) {
+            streak1++;
+        } else {
+            streak1 = 1;
+        };
+        if (streak1 === 3) {
+            tripleNumbersArray.push(string1[i]);
+        };
+        previousNumber1 = string1[i];
+    };
+    for (let i = 0; i < string2.length; i++) {
+        currentNumber2 = string2[i];
+        if (currentNumber2 === previousNumber2) {
+            streak2++;
+        } else {
+            streak2 = 1;
+        };
+        if (streak2 === 2) {
+            doubleNumbersArray.push(string2[i]);
+        };
+        previousNumber2 = string2[i];
+    };
+    for (let triple of tripleNumbersArray) {
+        if (doubleNumbersArray.includes(triple)) {
+            return 1;
+        };
+    };
+    return 0;
+};
+
 */
