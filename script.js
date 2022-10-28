@@ -3431,4 +3431,17 @@ function tripledouble(num1, num2) {
     return 0;
 };
 
+function nbMonths(startPriceOld, startPriceNew, savingperMonth, percentLossByMonth) {
+    let month = 0;
+    while (startPriceOld + savingperMonth * month < startPriceNew) {
+        month++;
+        if (month % 2 === 0) {
+            percentLossByMonth += 0.5;
+        };
+        startPriceOld *= ((100 - percentLossByMonth) / 100);
+        startPriceNew *= ((100 - percentLossByMonth) / 100);
+    };
+    return [month, Math.round(savingperMonth * month + startPriceOld - startPriceNew)];
+};
+
 */
