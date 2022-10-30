@@ -3454,4 +3454,21 @@ function nbYear(p0, percent, aug, p) {
     return year;
 };
 
+function twoSum(numbers, target) {
+    let indexArray = [];
+    for (let x = 0; x < numbers.length; x++) {
+        let currentNumber = numbers[x];
+        for (let y = 0; y < numbers.length; y++) {
+            let testingNumber = numbers[y];
+            if (y !== x && currentNumber + testingNumber === target) {
+                indexArray = [x, y];
+            };
+        };
+        if (indexArray[0]) {
+            break;
+        };
+    };
+    return indexArray;
+};
+
 */
