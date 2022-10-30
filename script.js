@@ -3444,4 +3444,14 @@ function nbMonths(startPriceOld, startPriceNew, savingperMonth, percentLossByMon
     return [month, Math.round(savingperMonth * month + startPriceOld - startPriceNew)];
 };
 
+function nbYear(p0, percent, aug, p) {
+    let year = 0;
+    let percentage = percent / 100;
+    while (p0 < p) {
+      p0 = p0 + Math.floor(p0 * percentage) + aug;
+      year++;
+    };
+    return year;
+};
+
 */
