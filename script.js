@@ -3471,4 +3471,27 @@ function twoSum(numbers, target) {
     return indexArray;
 };
 
+function beggars(values, n) {
+    if (n === 0) {
+        return [];
+    };
+    let beggarSums = {};
+    for (let i = 1; i <= n; i++) {
+        beggarSums[i] = 0;
+    };
+    let currentBeggar = 1;
+    for (let i = 0; i < values.length; i++) {
+        beggarSums[currentBeggar] += values[i];
+        if (currentBeggar === n) {
+            currentBeggar = 0;
+        };
+        currentBeggar++;
+    };
+    let beggarArray = [];
+    for (let beggar in beggarSums) {
+        beggarArray.push(beggarSums[beggar]);
+    };
+    return beggarArray;
+};
+
 */
