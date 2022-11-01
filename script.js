@@ -3494,4 +3494,17 @@ function beggars(values, n) {
     return beggarArray;
 };
 
+function meeting(s) {
+    let arrayOfGuests = s.split(';');
+    arrayOfGuests = arrayOfGuests.map(guest => guest.toUpperCase().split(':'));
+    arrayOfGuests.sort((a, b) => {
+        let result = a[1].localeCompare(b[1]);
+        return result !== 0 ? result : a[0].localeCompare(b[0]);
+    });
+    arrayOfGuests = arrayOfGuests.map(guest => guest.reverse().join(', '));
+    let stringToReturn = arrayOfGuests.join(')(');
+    stringToReturn = '(' + stringToReturn + ')';
+    return stringToReturn;
+};
+
 */
