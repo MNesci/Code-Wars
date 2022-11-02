@@ -3507,4 +3507,20 @@ function meeting(s) {
     return stringToReturn;
 };
 
+function cleanString(s) {
+    let arrayOfCharacters = s.split('');
+    for (let i = 0; i < arrayOfCharacters.length; i++) {
+        // if the current character is a #, remove it and the previous character
+        if (arrayOfCharacters[i] === '#' && i !== 0) {
+            arrayOfCharacters.splice(i - 1, 2);
+            i -= 2;
+        } else if (arrayOfCharacters[i] === '#') {
+            arrayOfCharacters.splice(i, 1);
+            i -= 1;
+        };
+    };
+    let cleanedString = arrayOfCharacters.join('')
+    return cleanedString;
+};
+
 */
