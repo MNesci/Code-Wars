@@ -3523,4 +3523,19 @@ function cleanString(s) {
     return cleanedString;
 };
 
+function validate(n){
+    let arrayOfDigits = n.toString().split('');
+    let lengthIsEven = arrayOfDigits.length % 2 === 0;
+    let arrayOfDoubles = arrayOfDigits.map((digit, index) => {
+        if ((lengthIsEven && index % 2 === 0) || (!lengthIsEven && index % 2 !== 0)) {
+            return Number(digit) * 2;
+        } else {
+            return Number(digit);
+        };
+    });
+    let singleDigitsArray = arrayOfDoubles.map(number => number > 9 ? number - 9 : number);
+    let sum = singleDigitsArray.reduce((total, digit) => total + digit, 0);
+    return sum % 10 === 0;
+};
+
 */
