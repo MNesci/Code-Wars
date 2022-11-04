@@ -3538,4 +3538,9 @@ function validate(n){
     return sum % 10 === 0;
 };
 
+function vowelOne(s){
+    let vowels = 'aeiouAEIOU';
+    return s.split('').map(letter => vowels.includes(letter) ? 1 : 0).join('');
+};
+
 */
