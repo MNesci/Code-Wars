@@ -3543,4 +3543,25 @@ function vowelOne(s){
     return s.split('').map(letter => vowels.includes(letter) ? 1 : 0).join('');
 };
 
+function isPrime(num) { 
+    if (num < 2) {
+        return false;
+    } else if (num === 2) {
+        return true;
+    } else if (num % 2 === 0) {
+        return false;
+    };
+    let primeBoolean = true;
+    let i = 3;
+    let limit = Math.sqrt(num);
+    while (i <= limit) {
+        if (num % i === 0) {
+            primeBoolean = false;
+            break;
+        };
+        i += 2;
+    };
+    return primeBoolean;
+};
+
 */
