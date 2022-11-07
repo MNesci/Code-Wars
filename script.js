@@ -3576,4 +3576,18 @@ function squares(x, n) {
     return arrayToReturn;
 };
 
+var maxSequence = function(arr) {
+    let max = 0;
+    let current = 0;
+    for (let i = 0; i < arr.length; i++) {
+        current += arr[i];
+        if (current >= max) {
+            max = current;
+        } else if (current < 0) {
+            current = 0;
+        };
+    };
+    return max;
+};
+
 */
