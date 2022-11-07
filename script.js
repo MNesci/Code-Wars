@@ -3564,4 +3564,16 @@ function isPrime(num) {
     return primeBoolean;
 };
 
+function squares(x, n) {
+    let arrayToReturn = [];
+    for (let i = 1; i <= n; i++) {
+        if (arrayToReturn.length === 0) {
+            arrayToReturn.push(x);
+        } else {
+            arrayToReturn.push(arrayToReturn[arrayToReturn.length - 1] ** 2);
+        };
+    };
+    return arrayToReturn;
+};
+
 */
