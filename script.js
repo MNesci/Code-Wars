@@ -3590,4 +3590,13 @@ var maxSequence = function(arr) {
     return max;
 };
 
+unction swap (string) {
+    let vowels = 'aeiou';
+    let stringToReturn = '';
+    for (let i = 0; i < string.length; i++) {
+        stringToReturn += vowels.includes(string[i]) ? string[i].toUpperCase() : string[i];
+    };
+    return stringToReturn;
+};
+
 */
