@@ -3590,13 +3590,24 @@ var maxSequence = function(arr) {
     return max;
 };
 
-unction swap (string) {
+function swap (string) {
     let vowels = 'aeiou';
     let stringToReturn = '';
     for (let i = 0; i < string.length; i++) {
         stringToReturn += vowels.includes(string[i]) ? string[i].toUpperCase() : string[i];
     };
     return stringToReturn;
+};
+
+function findMaxProduct(arr) {
+    return arr.reduce((max, integer, index) => {
+        let gap = index + 1;
+        let currentProduct = 1;
+        for (let i = index; i < arr.length; i += gap) {
+            currentProduct *= arr[i];
+        };
+        return currentProduct > max ? currentProduct : max;
+    }, -Infinity);
 };
 
 */
