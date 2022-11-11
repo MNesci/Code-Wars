@@ -3614,4 +3614,23 @@ function buildString(...template){
     return `I like ${template.join(', ')}!`;
 };
 
+function getWinner(listOfBallots) {
+    let voteCounts = {};
+    let votes = 0;
+    for (let ballot of listOfBallots) {
+        if (voteCounts[ballot]) {
+            voteCounts[ballot] += 1;
+        } else {
+            voteCounts[ballot] = 1;
+        };
+        votes++;
+    };
+    for (let candidate in voteCounts) {
+        if (voteCounts[candidate] > votes / 2) {
+            return candidate;
+        };
+    };
+    return null;
+};
+
 */
