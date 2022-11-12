@@ -3633,4 +3633,8 @@ function getWinner(listOfBallots) {
     return null;
 };
 
+var findAverage = function (nums) {
+    return nums.reduce((sum, number) => sum + number, 0) / nums.length;
+};
+
 */
