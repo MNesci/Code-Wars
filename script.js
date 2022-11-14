@@ -3643,4 +3643,26 @@ function predictAge(age1,age2,age3,age4,age5,age6,age7,age8){
     return Math.floor(rootOfSummedSquares / 2);
 };
 
+function queueTime(customers, n) {
+    let time = 0;
+    let tills = [];
+    for (let i = 0; i < n; i++) {
+        tills.push(0);
+    };
+    let currentCustomerIndex = 0;
+    while (customers[currentCustomerIndex] || tills.reduce((sum, current) => sum + current, 0) > 0) {
+        for (let i = 0; i < tills.length; i++) {
+            if (customers[currentCustomerIndex] && tills[i] === 0) {
+                tills[i] += customers[currentCustomerIndex];
+                currentCustomerIndex++;
+            };
+            if (tills[i] > 0) {
+                tills[i] -= 1;
+            };
+        };
+        time++;
+    };
+    return time;
+};
+
 */
