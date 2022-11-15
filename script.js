@@ -3665,4 +3665,12 @@ function queueTime(customers, n) {
     return time;
 };
 
+var countSheep = function (num){
+    let stringToReturn = '';
+    for (let i = 1; i <= num; i++) {
+        stringToReturn += `${i} sheep...`;
+    };
+    return stringToReturn;
+};
+
 */
