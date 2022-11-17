@@ -3673,4 +3673,10 @@ var countSheep = function (num){
     return stringToReturn;
 };
 
+function sumOfMinimums(arr) {
+    return arr.reduce((sum, array) => {
+        return sum + array.reduce((minimum, current) => current < minimum ? current : minimum, Infinity);
+    }, 0);
+};
+
 */
