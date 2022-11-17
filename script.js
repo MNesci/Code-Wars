@@ -3679,4 +3679,30 @@ function sumOfMinimums(arr) {
     }, 0);
 };
 
+function diamond(n) {
+    if (n < 1 || n % 2 === 0) {
+        return null;
+    };
+    let arrayOfLevels = [];
+    // number of spaces is (n - x) / 2
+    let i = 1
+    let ascending = true;
+    while (arrayOfLevels.length < n) {
+        let numberOfSpaces = (n - i) / 2;
+        let numberOfAsterices = i;
+        let currentLevel = `${' '.repeat(numberOfSpaces)}${'*'.repeat(numberOfAsterices)}\n`
+        
+        arrayOfLevels.push(currentLevel);
+        if (i === n) {
+            ascending = false;
+        };
+        if (ascending) {
+            i += 2;
+        } else {
+            i -= 2;
+        };
+    };
+    return arrayOfLevels.join('');
+};
+
 */
