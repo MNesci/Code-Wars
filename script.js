@@ -3705,4 +3705,14 @@ function diamond(n) {
     return arrayOfLevels.join('');
 };
 
+function addLength(str) {
+    let arrayOfWords = str.split(' ');
+    for (let i = 0; i < str.length; i++) {
+        if (arrayOfWords[i]) {
+            arrayOfWords[i] = `${arrayOfWords[i]} ${arrayOfWords[i].length}`;
+        };
+    };
+    return arrayOfWords;
+};
+
 */
