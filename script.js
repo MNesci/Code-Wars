@@ -3715,4 +3715,17 @@ function addLength(str) {
     return arrayOfWords;
 };
 
+function race(v1, v2, g) {
+    if (v1 >= v2) {
+        return null;
+    };
+    let speedDifference = v2 - v1;
+    let timeInHours = g / speedDifference;  
+    let hours = Math.floor(timeInHours);
+    let timeRemainingInMinutes = timeInHours * 60 - hours * 60;
+    let minutes = Math.floor(timeRemainingInMinutes);
+    let seconds = Math.floor(timeRemainingInMinutes * 60 - minutes * 60);
+    return [hours, minutes, seconds];
+};
+
 */
