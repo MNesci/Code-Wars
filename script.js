@@ -3736,4 +3736,19 @@ function doubleChar(str) {
     return stringToReturn;
 };
 
+function largestPairSum (numbers) {
+    return numbers.reduce((highestPair, currentNumber, index) => {
+        let highestComplement = -Infinity;
+        for (let i = 0; i < numbers.length; i++) {
+            if (i === index) {
+                continue;
+            };
+            let complement = numbers[i];
+            highestComplement = highestComplement > complement ? highestComplement : complement;
+        };
+        let currentPair = currentNumber + highestComplement;
+        return highestPair > currentPair ? highestPair : currentPair;
+    }, -Infinity);
+};
+
 */
