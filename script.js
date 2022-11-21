@@ -3728,4 +3728,12 @@ function race(v1, v2, g) {
     return [hours, minutes, seconds];
 };
 
+function doubleChar(str) {
+    let stringToReturn = '';
+    for (let i = 0; i < str.length; i++) {
+        stringToReturn = stringToReturn + str[i] + str[i];
+    };
+    return stringToReturn;
+};
+
 */
